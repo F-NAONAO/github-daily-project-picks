@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090811">
+  <meta name="description" content="GitHub Daily：每天精选四个值得体验、探索和继续成长的开源项目。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%237851da'/%3E%3Ctext x='16' y='23' font-size='21' text-anchor='middle' fill='%23fff' font-family='Arial'%3EG%3C/text%3E%3C/svg%3E">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+  <title>GitHub Daily · 2026.09.28</title>
+  <style>
+:root{color-scheme:dark;--ink:#f4f0ff;--muted:#a8a1ba;--muted-2:#817994;--line:rgba(191,169,255,.15);--line-strong:rgba(191,169,255,.28);--purple:#c6adff;--purple-bright:#a984ff;--surface:rgba(21,17,34,.82);--surface-deep:#100d1b;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Microsoft YaHei","PingFang SC",sans-serif;font-family:var(--sans);color:var(--ink);background:#090811;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{position:relative;margin:0;min-height:100vh;overflow-x:hidden;background:radial-gradient(ellipse at 50% -15%,rgba(126,82,235,.24),transparent 43%),radial-gradient(ellipse at 100% 47%,rgba(87,57,157,.13),transparent 32%),linear-gradient(180deg,#0b0913 0%,#090811 55%,#0d0a16 100%);color:var(--ink)}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(205,188,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(205,188,255,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+a{color:inherit}
+.masthead,.page{position:relative;z-index:1}
+.masthead{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,6vw,92px);border-bottom:1px solid rgba(191,169,255,.11);background:rgba(9,8,17,.58);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.045em;font-size:15px}
+.brand-mark{width:35px;height:35px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#bca0ff,#7851da);color:#fff;font-family:var(--sans);font-size:18px;font-weight:700;box-shadow:0 5px 22px rgba(144,101,255,.28),inset 0 1px 0 rgba(255,255,255,.32)}
+.brand small{display:block;color:#8b829f;font-size:9px;letter-spacing:.19em;font-weight:650;margin-top:3px}
+.mast-meta{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:11px}
+.mast-meta a{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:9px 13px;background:rgba(255,255,255,.035);transition:all .2s ease}
+.mast-meta a:hover{border-color:var(--line-strong);background:rgba(177,143,255,.1);color:#e9deff}
+.page{max-width:1270px;margin:auto;padding:58px clamp(20px,6vw,92px) 62px}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:34px;align-items:end;padding:4px 0 36px;border-bottom:1px solid var(--line)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;color:#c4adf4;font-weight:650;border:1px solid rgba(181,147,255,.19);background:rgba(159,119,255,.07);border-radius:999px;padding:8px 12px}
+.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:#b99aff;box-shadow:0 0 10px rgba(185,154,255,.85)}
+.hero h1{font-family:var(--sans);font-size:clamp(39px,6vw,72px);font-weight:650;letter-spacing:-.075em;line-height:1.04;margin:21px 0 15px;max-width:790px;text-wrap:balance}
+.hero h1 em{font-weight:650;color:#c6adff;font-style:normal;text-shadow:0 0 34px rgba(158,117,255,.22)}
+.hero p{max-width:670px;font-size:14px;color:var(--muted);line-height:1.8;margin:0}
+.date-card{justify-self:end;text-align:right;padding:16px 18px 14px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(35,27,54,.74),rgba(17,14,28,.68));box-shadow:0 16px 45px rgba(5,3,15,.2),inset 0 1px 0 rgba(255,255,255,.045)}
+.date-day{font-family:var(--sans);font-size:44px;font-weight:600;line-height:1;color:#e1d3ff;letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+.date-month{font-size:9px;letter-spacing:.14em;color:#9b91ad;margin-top:9px}
+.date-card small{display:block;font-size:10px;color:#80778e;margin-top:12px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:31px 0 16px}
+.section-head h2{font-family:var(--sans);font-weight:600;letter-spacing:-.045em;font-size:23px;margin:0}
+.section-head p{font-size:9px;letter-spacing:.12em;color:#80778e;margin:0}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.project-card{position:relative;isolation:isolate;overflow:hidden;min-height:365px;padding:24px 25px 21px;background:linear-gradient(145deg,rgba(24,20,39,.94),rgba(15,13,25,.94));border:1px solid rgba(190,169,255,.14);border-radius:22px;display:flex;flex-direction:column;box-shadow:0 18px 48px rgba(4,3,13,.23),inset 0 1px 0 rgba(255,255,255,.035);transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(190,169,255,.32);box-shadow:0 24px 58px rgba(6,3,20,.4),0 0 34px rgba(129,83,227,.09),inset 0 1px 0 rgba(255,255,255,.055)}
+.project-card:before{content:"";position:absolute;z-index:-1;width:230px;height:230px;border-radius:50%;right:-102px;top:-145px;background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%);pointer-events:none}
+.project-card:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.025),transparent 28%);z-index:-1}
+.card-2:before,.card-3:before,.card-4:before{background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:1}
+.category{font-size:10px;font-weight:700;color:#d0bdff;letter-spacing:.035em}
+.category-en{font-size:8px;letter-spacing:.15em;color:#766d87}
+.card-2 .category,.card-3 .category,.card-4 .category{color:#d0bdff}
+.project-card h2{position:relative;z-index:1;font-family:var(--sans);font-size:25px;line-height:1.24;font-weight:600;letter-spacing:-.045em;margin:24px 0 6px;max-width:92%;text-wrap:pretty}
+.repo{position:relative;z-index:1;width:fit-content;font-size:11px;color:#bda4fa;text-decoration:none;overflow-wrap:anywhere;transition:color .18s ease}
+.repo:hover{color:#e5d8ff;text-decoration:underline;text-underline-offset:3px}
+.summary{font-size:13px;line-height:1.75;color:#b4adc3;margin:18px 0 14px;max-width:96%}
+.detail{border-top:1px solid rgba(191,169,255,.11);padding:11px 0 0;margin-top:9px}
+.detail span{font-size:9px;letter-spacing:.07em;color:#a897c9;font-weight:700}
+.detail p{font-size:12px;line-height:1.7;color:#cbc4d7;margin:5px 0 0}
+.growth{padding-bottom:13px}
+.signal{margin-top:auto;display:flex;gap:8px;align-items:center;color:#928aa2;font-size:10px;line-height:1.5;padding:10px 0 12px}
+.signal-dot{flex:0 0 auto;width:6px;height:6px;background:#b99aff;border-radius:50%;box-shadow:0 0 0 4px rgba(185,154,255,.11),0 0 12px rgba(185,154,255,.45)}
+.actions{display:flex;gap:8px;position:relative;z-index:1}
+.action{display:inline-flex;gap:14px;align-items:center;border:1px solid transparent;border-radius:999px;padding:10px 15px;font-size:11px;font-weight:650;text-decoration:none;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.action:hover{transform:translateY(-1px)}
+.action:active{transform:scale(.98)}
+.action-github{background:linear-gradient(135deg,#b99aff,#8058df);color:#fff;box-shadow:0 5px 18px rgba(129,84,224,.24)}
+.action-github:hover{background:linear-gradient(135deg,#cbb6ff,#956ff0);box-shadow:0 8px 25px rgba(129,84,224,.34)}
+.action-demo{background:rgba(255,255,255,.045);color:#e0d5f6;border-color:var(--line)}
+.action-demo:hover{background:rgba(177,143,255,.12);border-color:var(--line-strong)}
+.action:focus-visible,.mast-meta a:focus-visible,.repo:focus-visible{outline:2px solid #d4c1ff;outline-offset:3px}
+.card-index{position:absolute;right:23px;bottom:20px;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;color:#665a7a}
+.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:16px;margin-top:26px;color:#7f778e;font-size:10px;line-height:1.65}
+.footer a{color:#bda4fa;text-decoration:none}
+@media(max-width:720px){.masthead{height:64px;padding:0 17px}.mast-meta{gap:7px;font-size:10px}.mast-meta span{display:none}.mast-meta a{padding:8px 11px}.page{padding:36px 17px 42px}.hero{grid-template-columns:1fr;gap:15px;padding-bottom:25px}.hero h1{font-size:clamp(42px,12vw,54px);margin-top:17px}.hero p{font-size:13px}.date-card{justify-self:start;text-align:left;padding:10px 13px;display:flex;align-items:center;gap:11px;border-radius:14px}.date-day{font-size:28px}.date-month{margin:0 0 2px}.date-card small{margin:0 0 0 2px}.section-head{align-items:start;flex-direction:column;gap:7px;margin-top:25px}.section-head h2{font-size:21px}.cards{grid-template-columns:1fr;gap:12px}.project-card{min-height:340px;padding:20px;border-radius:19px}.project-card h2{font-size:23px;margin-top:21px}.summary{font-size:12px}.detail p{font-size:11px}.footer{flex-direction:column;gap:5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+  <header class="masthead"><div class="brand"><span class="brand-mark">G</span><div>GitHub Daily<small>OPEN SOURCE FIELDNOTES</small></div></div><div class="mast-meta"><span>每天 08:00 · 北京时间</span><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer">GitHub Trending ↗</a></div></header>
+  <main class="page">
+    <section class="hero"><div><div class="eyebrow">办公提效 · AI 工作流 · 生活灵感</div><h1>四个方向，<em>每天一点新发现。</em></h1><p>每天从 GitHub 社区寻找 3 个办公自动化项目和 1 个生活兴趣项目。看完简介就知道怎么上手，也能点开仓库或演示继续探索。</p></div><div class="date-card"><div class="date-day">28</div><div class="date-month">2026 · 09 / TODAY'S EDITION</div><small>上海时间 2026-09-28</small></div></section>
+    <section class="section-head"><h2>今日四向精选</h2><p>03 OFFICE AUTOMATION　/　01 LIFE & PLAY</p></section>
+    <section class="cards"><article class="project-card card-1">
+      <div class="card-top"><span class="category">01 / 办公自动化</span><span class="category-en">DATA & INSIGHT</span></div>
+      <h2>God&#39;s Eye View｜把地球变成实时可探索的数据仪表盘</h2>
+      <a class="repo" href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank" rel="noopener noreferrer">bilawalsidhu/gods-eye-view <span>↗</span></a>
+      <p class="summary">在浏览器的 3D 地球上叠加航班、船舶、卫星、地震、交通与公共摄像头等公开数据，可跟踪目标、查询数据，还能用语音控制 AI 助手。</p>
+      <div class="detail"><span>上手方式</span><p>安装 Pinokio 后一键启动；或按 README 用 Node.js 运行 npm ci 与 npm run dev。无需 API Key 即可先看基础图层。</p></div>
+      <div class="detail growth"><span>AI 时代的成长点</span><p>从地图与数据图层体验开始，也能继续开发数据源、可视化图层或 AI 语音分析，把 AI 带进实时数据探索。</p></div>
+      <div class="signal"><span class="signal-dot"></span>曾登上 GitHub Trending 日榜和周榜第一，近期仍有高热度。</div>
+      <div class="actions"><a class="action action-github" href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">01</span>
+    </article>
+<article class="project-card card-2">
+      <div class="card-top"><span class="category">02 / 办公自动化</span><span class="category-en">WORKFLOW</span></div>
+      <h2>LobsterAI｜能动手干活的桌面办公 Agent</h2>
+      <a class="repo" href="https://github.com/netease-youdao/LobsterAI" target="_blank" rel="noopener noreferrer">netease-youdao/LobsterAI <span>↗</span></a>
+      <p class="summary">网易有道开源的桌面 Agent，可读本地文件、操作浏览器、处理 Word/Excel/PPT、生成视频与网页研究，还支持定时任务，并能从飞书等 IM 远程下指令。</p>
+      <div class="detail"><span>上手方式</span><p>下载 Windows/macOS 客户端，连接可用模型后，给它一个具体任务，例如“分析这份 Excel 并整理成图表”。</p></div>
+      <div class="detail growth"><span>AI 时代的成长点</span><p>从单轮问答进阶到多 Agent 分工、可复用 Skills/MCP 和定时工作流；还能自己写 Agent 或扩展任务。</p></div>
+      <div class="signal"><span class="signal-dot"></span>GitHub 仓库约 6.1k Stars、近 4,200 次提交；9/27 仍有更新。</div>
+      <div class="actions"><a class="action action-github" href="https://github.com/netease-youdao/LobsterAI" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">02</span>
+    </article>
+<article class="project-card card-3">
+      <div class="card-top"><span class="category">03 / 办公自动化</span><span class="category-en">WORKBENCH</span></div>
+      <h2>Agent Office｜把 AI 编码团队放进 3D 办公室</h2>
+      <a class="repo" href="https://github.com/AgentSystemLabs/agent-office" target="_blank" rel="noopener noreferrer">AgentSystemLabs/agent-office <span>↗</span></a>
+      <p class="summary">可走动的卡通 3D 办公室：把 Claude Code、OpenCode 或 Codex 安排到工位，实时看终端、共享 Shell、语音协作，还能在墙上看 Issues/PR。</p>
+      <div class="detail"><span>上手方式</span><p>按 README 启动本地网页，用 WASD 行走、Space 跳跃；在电梯里添加 GitHub 仓库，再把 AI Agent 分到工位。</p></div>
+      <div class="detail growth"><span>AI 时代的成长点</span><p>把 AI 团队协作变成可观察的工作台；还能扩展不同 Agent、项目工位与任务看板，探索人机协作的新方式。</p></div>
+      <div class="signal"><span class="signal-dot"></span>9/28 发布新版本；项目刚开源，仍在快速迭代。</div>
+      <div class="actions"><a class="action action-github" href="https://github.com/AgentSystemLabs/agent-office" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">03</span>
+    </article>
+<article class="project-card card-4">
+      <div class="card-top"><span class="category">04 / 生活兴趣</span><span class="category-en">LIFE & PLAY</span></div>
+      <h2>Migo 旅行领航｜让 AI 把旅行攻略变成手机网页</h2>
+      <a class="repo" href="https://github.com/zexuanw958-svg/travel-plan-viz" target="_blank" rel="noopener noreferrer">zexuanw958-svg/travel-plan-viz <span>↗</span></a>
+      <p class="summary">给目的地和天数，Claude/Codex 可联网规划行程，生成一个精美单文件 HTML：带交互地图、每日时间轴、订票提醒和每日美食推荐。</p>
+      <div class="detail"><span>上手方式</span><p>打开仓库里的成都、香港、深圳或东京旅行 HTML 样例；也可以让 Agent 按目的地与天数生成自己的版本。</p></div>
+      <div class="detail growth"><span>AI 时代的成长点</span><p>把一次性的 AI 攻略升级为可复用 Skill：能接地图/旅行服务补充实时信息，还能继续修改行程并重新渲染页面。</p></div>
+      <div class="signal"><span class="signal-dot"></span>GitHub 仓库 9/25 更新，提供四城 HTML 样例和行程校验工具。</div>
+      <div class="actions"><a class="action action-github" href="https://github.com/zexuanw958-svg/travel-plan-viz" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">04</span>
+    </article></section>
+    <footer class="footer"><span>项目来源：GitHub 仓库与 README。简介和上手方式按项目公开资料整理。</span><span>更新于上海时间 2026-09-28</span></footer>
+  </main>
+</body>
+</html>
