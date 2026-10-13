@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090811">
-  <meta name="description" content="GitHub Daily：每天精选四个值得体验、探索和继续成长的开源项目。">
+  <meta name="description" content="GitHub Daily：每天精选五个帮助普通人成长、提效和改善生活的开源项目。">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%237851da'/%3E%3Ctext x='16' y='23' font-size='21' text-anchor='middle' fill='%23fff' font-family='Arial'%3EG%3C/text%3E%3C/svg%3E">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
-  <title>GitHub Daily · 2026.10.12</title>
+  <title>GitHub Daily · 2026.10.13</title>
   <style>
 :root{color-scheme:dark;--ink:#f4f0ff;--muted:#a8a1ba;--muted-2:#817994;--line:rgba(191,169,255,.15);--line-strong:rgba(191,169,255,.28);--purple:#c6adff;--purple-bright:#a984ff;--surface:rgba(21,17,34,.82);--surface-deep:#100d1b;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Microsoft YaHei","PingFang SC",sans-serif;font-family:var(--sans);color:var(--ink);background:#090811;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 *{box-sizing:border-box}
@@ -42,11 +42,11 @@ a{color:inherit}
 .project-card:hover{transform:translateY(-4px);border-color:rgba(190,169,255,.32);box-shadow:0 24px 58px rgba(6,3,20,.4),0 0 34px rgba(129,83,227,.09),inset 0 1px 0 rgba(255,255,255,.055)}
 .project-card:before{content:"";position:absolute;z-index:-1;width:230px;height:230px;border-radius:50%;right:-102px;top:-145px;background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%);pointer-events:none}
 .project-card:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.025),transparent 28%);z-index:-1}
-.card-2:before,.card-3:before,.card-4:before{background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%)}
+.card-2:before,.card-3:before,.card-4:before,.card-5:before{background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%)}
 .card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:1}
 .category{font-size:10px;font-weight:700;color:#d0bdff;letter-spacing:.035em}
 .category-en{font-size:8px;letter-spacing:.15em;color:#766d87}
-.card-2 .category,.card-3 .category,.card-4 .category{color:#d0bdff}
+.card-2 .category,.card-3 .category,.card-4 .category,.card-5 .category{color:#d0bdff}
 .project-card h2{position:relative;z-index:1;font-family:var(--sans);font-size:25px;line-height:1.24;font-weight:600;letter-spacing:-.045em;margin:24px 0 6px;max-width:92%;text-wrap:pretty}
 .repo{position:relative;z-index:1;width:fit-content;font-size:11px;color:#bda4fa;text-decoration:none;overflow-wrap:anywhere;transition:color .18s ease}
 .repo:hover{color:#e5d8ff;text-decoration:underline;text-underline-offset:3px}
@@ -55,6 +55,7 @@ a{color:inherit}
 .detail span{font-size:9px;letter-spacing:.07em;color:#a897c9;font-weight:700}
 .detail p{font-size:12px;line-height:1.7;color:#cbc4d7;margin:5px 0 0}
 .growth{padding-bottom:13px}
+.reason{padding-bottom:13px}
 .signal{margin-top:auto;display:flex;gap:8px;align-items:center;color:#928aa2;font-size:10px;line-height:1.5;padding:10px 0 12px}
 .signal-dot{flex:0 0 auto;width:6px;height:6px;background:#b99aff;border-radius:50%;box-shadow:0 0 0 4px rgba(185,154,255,.11),0 0 12px rgba(185,154,255,.45)}
 .actions{display:flex;gap:8px;position:relative;z-index:1}
@@ -74,55 +75,76 @@ a{color:inherit}
 </style>
 </head>
 <body>
-  <header class="masthead"><div class="brand"><span class="brand-mark">G</span><div>GitHub Daily<small>OPEN SOURCE FIELDNOTES</small></div></div><div class="mast-meta"><span>每天 08:00 · 北京时间</span><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer">GitHub Trending ↗</a></div></header>
+  <header class="masthead"><div class="brand"><span class="brand-mark">G</span><div>GitHub Daily<small>OPEN SOURCE FIELDNOTES</small></div></div><div class="mast-meta"><span>登录后在对话中输入“今天的”</span><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer">GitHub Trending ↗</a></div></header>
   <main class="page">
-    <section class="hero"><div><div class="eyebrow">办公提效 · AI 工作流 · 生活灵感</div><h1>四个方向，<em>每天一点新发现。</em></h1><p>每天从 GitHub 社区精选数据分析、办公工作流、办公工作台和生活兴趣各一个项目。看完简介就知道怎么上手，也能点开仓库或演示继续探索。</p></div><div class="date-card"><div class="date-day">12</div><div class="date-month">2026 · 10 / TODAY'S EDITION</div><small>上海时间 2026-10-12</small></div></section>
-    <section class="section-head"><h2>今日四向精选</h2><p>03 OFFICE AUTOMATION　/　01 LIFE & PLAY</p></section>
+    <section class="hero"><div><div class="eyebrow">普通人成长 · AI 办公 · 生活实验</div><h1>五个方向，<em>每天一点新发现。</em></h1><p>每天从 GitHub 挑选五个普通人能看懂、能体验的项目，覆盖数据分析、办公自动化、知识管理、创作和生活。看完就知道它能帮你做什么、如何开始。</p></div><div class="date-card"><div class="date-day">13</div><div class="date-month">2026 · 10 / TODAY'S EDITION</div><small>上海时间 2026-10-13</small></div></section>
+    <section class="section-head"><h2>今日五向精选</h2><p>5 PICKS　/　FOR EVERYDAY GROWTH</p></section>
     <section class="cards"><article class="project-card card-1">
-      <div class="card-top"><span class="category">01 / 办公自动化</span><span class="category-en">DATA & INSIGHT</span></div>
-      <h2>GridCraft｜可让 AI Agent 操作的开源表格</h2>
-      <a class="repo" href="https://github.com/storytold/gridcraft" target="_blank" rel="noopener noreferrer">storytold/gridcraft <span>↗</span></a>
-      <p class="summary">纯 Rust 开源表格，兼容 XLSX/CSV，支持 500+ 函数、数据透视表与图表；还提供 MCP/CLI，让 Agent 读取、编辑和检查单元格。</p>
-      <div class="detail"><span>上手方式</span><p>Windows 从 GitHub Releases 下载签名 MSI/便携包，打开 sales 样例，试公式、透视表和图表；项目仍在 pre-alpha。</p></div>
-      <div class="detail growth"><span>AI 时代的成长点</span><p>练习把分析拆成取数、公式清洗、图表呈现和结果校验；再让 Agent 操作表格，人工复核关键数字。</p></div>
-      <div class="signal"><span class="signal-dot"></span>Trendshift Rust 周榜收录；本周新增约 1.6k 星，README 标注仍为 pre-alpha。</div>
-      <div class="actions"><a class="action action-github" href="https://github.com/storytold/gridcraft" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <div class="card-top"><span class="category">01 / AI + 数据分析</span><span class="category-en">AI + DATA</span></div>
+      <h2>Data Formulator｜让 AI 陪你边问边看数据</h2>
+      <a class="repo" href="https://github.com/microsoft/data-formulator" target="_blank" rel="noopener noreferrer">microsoft/data-formulator <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>微软研究院开源的可视化分析工具：导入 CSV、Excel 等数据，用自然语言追问，并把分析过程整理成可编辑图表和报告。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>拿到月度销售表，想比较地区走势或找异常，不必先会 SQL；用自己的话提问，再检查图表和结论。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>从官方 GitHub Releases 下载 Windows/macOS 桌面版，导入 CSV 后问“各地区月销售额怎么变化”。AI 分析需配置模型服务（Ollama 或兼容 API）；桌面预览版未签名，只从官方仓库下载。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>把业务问题拆成分析问题；核对口径、图表与 AI 结论；把探索过程整理成报告。</p></div>
+      <div class="detail"><span>学习价值</span><p>7.5/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>Microsoft Research 项目，约 17.6k 星；8 月 15 日发布 0.8 beta，增加统一分析流程和数据源。上手门槛高于纯网页工具。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/microsoft/data-formulator" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
       <span class="card-index">01</span>
     </article>
 <article class="project-card card-2">
-      <div class="card-top"><span class="category">02 / 办公自动化</span><span class="category-en">WORKFLOW</span></div>
-      <h2>DeskcommCRM｜WhatsApp AI 客户跟进 CRM</h2>
-      <a class="repo" href="https://github.com/melgarafael/DeskcommCRM" target="_blank" rel="noopener noreferrer">melgarafael/DeskcommCRM <span>↗</span></a>
-      <p class="summary">自托管销售 CRM，把 WhatsApp 客户沟通、AI 接待与意向筛选、销售跟进、自动化规则和人工接手放进同一工作流。</p>
-      <div class="detail"><span>上手方式</span><p>先看 README 部署流程；实际体验需自备 4GB+ VPS、域名、Supabase、模型 API Key 与 WhatsApp 通道，再按向导安装。</p></div>
-      <div class="detail growth"><span>AI 时代的成长点</span><p>拆解客户接待、意向识别、自动跟进与人工接手；学习为 AI 设定知识来源、回复边界和可检查的转人工条件。</p></div>
-      <div class="signal"><span class="signal-dot"></span>Trendshift 记录近 61 天新增约 4,057 星，9/12 曾登 GitHub 总榜第 17。</div>
-      <div class="actions"><a class="action action-github" href="https://github.com/melgarafael/DeskcommCRM" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <div class="card-top"><span class="category">02 / AI办公自动化</span><span class="category-en">AI + WORKFLOW</span></div>
+      <h2>Dify｜把重复工作连成 AI 流程</h2>
+      <a class="repo" href="https://github.com/langgenius/dify" target="_blank" rel="noopener noreferrer">langgenius/dify <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>用可视化画布把“收集材料—AI 处理—检查—输出”连成流程，可用于周报整理、材料摘要、邮件草稿或表格归纳。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>每周把几份材料整理成统一格式的会议周报或公众号选题，先让 AI 汇总，再由自己检查事实和表达。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>打开 Dify Cloud 注册，选 Workflow 模板，把示例文字换成自己的短材料并试运行；官方沙盒含 200 次免费 GPT-4 调用。换其他模型通常要配置服务商或 API Key。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>拆解重复工作；设计输入、检查步骤和输出格式；学会让 AI 按流程做事。</p></div>
+      <div class="detail"><span>学习价值</span><p>8.5/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>GitHub 约 157.5k 星，官方组织页显示 10 月 5 日仍有更新；Dify Open Source License 基于 Apache 2.0 并附带额外条件。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/langgenius/dify" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://cloud.dify.ai/" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
       <span class="card-index">02</span>
     </article>
 <article class="project-card card-3">
-      <div class="card-top"><span class="category">03 / 办公自动化</span><span class="category-en">WORKBENCH</span></div>
-      <h2>LLM Wiki｜把文件整理成可浏览的知识库</h2>
-      <a class="repo" href="https://github.com/nashsu/llm_wiki" target="_blank" rel="noopener noreferrer">nashsu/llm_wiki <span>↗</span></a>
-      <p class="summary">跨平台桌面知识工作台：导入文档后，由模型持续生成互相链接的主题页面，方便浏览和追溯，不只是临时问答。</p>
-      <div class="detail"><span>上手方式</span><p>从 GitHub Releases 下载桌面版，配置模型服务商 API Key，导入 PDF/Word/Markdown，再检查生成的知识页面和来源。</p></div>
-      <div class="detail growth"><span>AI 时代的成长点</span><p>练习把散落文件整理成持续更新的知识库，并抽查模型归纳、关联和来源，建立可靠的知识维护习惯。</p></div>
-      <div class="signal"><span class="signal-dot"></span>RepoRadar 10/9 快照：近 7 天新增 167 星，累计约 20.3k 星，曾 3 次登榜。</div>
-      <div class="actions"><a class="action action-github" href="https://github.com/nashsu/llm_wiki" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <div class="card-top"><span class="category">03 / AI知识管理</span><span class="category-en">AI + KNOWLEDGE</span></div>
+      <h2>AnythingLLM｜让 AI 帮你读自己的资料</h2>
+      <a class="repo" href="https://github.com/Mintplex-Labs/anything-llm" target="_blank" rel="noopener noreferrer">Mintplex-Labs/anything-llm <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>Windows、macOS 桌面 AI 助手；把 PDF、Word 等资料放进工作区后，可以围绕资料提问并查看引用来源，也能连接本地或云端模型。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>把行业报告、公众号素材或课程讲义放进一个工作区，提问“这几份资料对同一个问题分别怎么说”。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>下载 Windows Desktop 安装包，按个人用户方式安装；新建工作区，拖入一份 PDF 后提问。可用内置 Ollama 本地模型；首次使用需要下载模型，云端模型需自己的 API Key。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>整理个人资料；用来源核对 AI 回答；建立可复用的主题知识库。</p></div>
+      <div class="detail"><span>学习价值</span><p>9/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>MIT 开源，约 66.9k 星；仓库 10 月 9 日仍有更新，v1.17 加入模型管理和新手引导改进。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/Mintplex-Labs/anything-llm" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://anythingllm.com/" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
       <span class="card-index">03</span>
     </article>
 <article class="project-card card-4">
-      <div class="card-top"><span class="category">04 / 生活兴趣</span><span class="category-en">LIFE & PLAY</span></div>
-      <h2>PhotoCraft｜开源照片与图层编辑器</h2>
-      <a class="repo" href="https://github.com/storytold/photocraft" target="_blank" rel="noopener noreferrer">storytold/photocraft <span>↗</span></a>
-      <p class="summary">纯 Rust 开源图像编辑器，支持图层、蒙版和 PSD 等格式；提供多平台桌面版，适合自己动手修图和创作。</p>
-      <div class="detail"><span>上手方式</span><p>从官方页面下载 Windows/macOS/Linux 版本，导入照片试图层和蒙版；项目仍属 early alpha，操作可能有粗糙处。</p></div>
-      <div class="detail growth"><span>AI 时代的成长点</span><p>把 AI 生成图当练习素材，手动调整图层、蒙版和色彩，检查并修正边缘、文字和细节；AI 生图不是它的内置功能。</p></div>
-      <div class="signal"><span class="signal-dot"></span>Trendshift 记录 10/1–10/12 新增约 4.7 万星；10/7 登日榜第 1。</div>
-      <div class="actions"><a class="action action-github" href="https://github.com/storytold/photocraft" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <div class="card-top"><span class="category">04 / AI创作与内容</span><span class="category-en">AI + CREATION</span></div>
+      <h2>ComfyUI｜用现成模板做图和视频</h2>
+      <a class="repo" href="https://github.com/Comfy-Org/ComfyUI" target="_blank" rel="noopener noreferrer">Comfy-Org/ComfyUI <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>开源 AI 创作工具，可用现成工作流生成或编辑图片、视频、音频；既能本机运行，也有云端版本。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>为公众号试做一张封面，或把图片做成短视频；先套用模板，再改提示词、参考图和输出尺寸。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>从官方页面下载 Comfy Desktop，安装后在模板库选 Text to Image 教程试做。模型文件会占用不少磁盘；本机生成强烈建议有独立显卡，也可选付费 Comfy Cloud。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练习提示词、参考素材和生成结果的迭代；理解一份作品怎样由多个步骤组成。</p></div>
+      <div class="detail"><span>学习价值</span><p>7.5/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>ComfyUI 桌面端仓库 10 月 6 日仍有更新；官方称桌面版是新手最简单入口，并提供模板和教程。模型和显卡是主要门槛。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/Comfy-Org/ComfyUI" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
       <span class="card-index">04</span>
+    </article>
+<article class="project-card card-5">
+      <div class="card-top"><span class="category">05 / AI生活实验室</span><span class="category-en">AI + LIFE</span></div>
+      <h2>Folia｜让歌词变成沉浸式音乐画面</h2>
+      <a class="repo" href="https://github.com/chthollyphile/folia-major" target="_blank" rel="noopener noreferrer">chthollyphile/folia-major <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>支持本地音乐、网易云、酷狗等来源的歌词播放器；可全屏看歌词动画，并按歌曲情绪生成视觉主题。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>听歌时打开全屏歌词，让背景配色和歌词氛围随音乐变化；也可以导入自己的本地歌曲。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>从 GitHub Releases 下载 Windows 版，导入本地歌曲或连接音乐来源；先试歌词动画。想体验 AI 主题，再在设置填 Gemini 或兼容模型 API Key。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>体验 AI 如何把文字与情绪转成视觉表达；观察提示词、歌词和生成主题之间的关系。</p></div>
+      <div class="detail"><span>学习价值</span><p>8.5/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>GitHub.Locker 统计其 10 月 11 日单日新增约 565 星；9 月 26 日发布 v0.7.9，提供 Windows/macOS 安装包。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/chthollyphile/folia-major" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://folia-site.cielaniska.top/" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <span class="card-index">05</span>
     </article></section>
-    <footer class="footer"><span>项目来源：GitHub 仓库与 README。简介和上手方式按项目公开资料整理。</span><span>更新于上海时间 2026-10-12</span></footer>
+    <footer class="footer"><span>项目来源：GitHub 仓库与 README。简介和上手方式按项目公开资料整理。</span><span>更新于上海时间 2026-10-13</span></footer>
   </main>
 </body>
 </html>
