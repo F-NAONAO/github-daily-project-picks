@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090811">
+  <meta name="description" content="GitHub Daily：每天精选五个帮助普通人成长、提效和改善生活的开源项目。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%237851da'/%3E%3Ctext x='16' y='23' font-size='21' text-anchor='middle' fill='%23fff' font-family='Arial'%3EG%3C/text%3E%3C/svg%3E">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+  <title>GitHub Daily · 2026.10.18</title>
+  <style>
+:root{color-scheme:dark;--ink:#f4f0ff;--muted:#a8a1ba;--muted-2:#817994;--line:rgba(191,169,255,.15);--line-strong:rgba(191,169,255,.28);--purple:#c6adff;--purple-bright:#a984ff;--surface:rgba(21,17,34,.82);--surface-deep:#100d1b;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Microsoft YaHei","PingFang SC",sans-serif;font-family:var(--sans);color:var(--ink);background:#090811;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{position:relative;margin:0;min-height:100vh;overflow-x:hidden;background:radial-gradient(ellipse at 50% -15%,rgba(126,82,235,.24),transparent 43%),radial-gradient(ellipse at 100% 47%,rgba(87,57,157,.13),transparent 32%),linear-gradient(180deg,#0b0913 0%,#090811 55%,#0d0a16 100%);color:var(--ink)}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(205,188,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(205,188,255,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+a{color:inherit}
+.masthead,.page{position:relative;z-index:1}
+.masthead{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,6vw,92px);border-bottom:1px solid rgba(191,169,255,.11);background:rgba(9,8,17,.58);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.045em;font-size:15px}
+.brand-mark{width:35px;height:35px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#bca0ff,#7851da);color:#fff;font-family:var(--sans);font-size:18px;font-weight:700;box-shadow:0 5px 22px rgba(144,101,255,.28),inset 0 1px 0 rgba(255,255,255,.32)}
+.brand small{display:block;color:#8b829f;font-size:9px;letter-spacing:.19em;font-weight:650;margin-top:3px}
+.mast-meta{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:11px}
+.mast-meta a{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:9px 13px;background:rgba(255,255,255,.035);transition:all .2s ease}
+.mast-meta a:hover{border-color:var(--line-strong);background:rgba(177,143,255,.1);color:#e9deff}
+.page{max-width:1270px;margin:auto;padding:58px clamp(20px,6vw,92px) 62px}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:34px;align-items:end;padding:4px 0 36px;border-bottom:1px solid var(--line)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;color:#c4adf4;font-weight:650;border:1px solid rgba(181,147,255,.19);background:rgba(159,119,255,.07);border-radius:999px;padding:8px 12px}
+.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:#b99aff;box-shadow:0 0 10px rgba(185,154,255,.85)}
+.hero h1{font-family:var(--sans);font-size:clamp(39px,6vw,72px);font-weight:650;letter-spacing:-.075em;line-height:1.04;margin:21px 0 15px;max-width:790px;text-wrap:balance}
+.hero h1 em{font-weight:650;color:#c6adff;font-style:normal;text-shadow:0 0 34px rgba(158,117,255,.22)}
+.hero p{max-width:670px;font-size:14px;color:var(--muted);line-height:1.8;margin:0}
+.date-card{justify-self:end;text-align:right;padding:16px 18px 14px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(35,27,54,.74),rgba(17,14,28,.68));box-shadow:0 16px 45px rgba(5,3,15,.2),inset 0 1px 0 rgba(255,255,255,.045)}
+.date-day{font-family:var(--sans);font-size:44px;font-weight:600;line-height:1;color:#e1d3ff;letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+.date-month{font-size:9px;letter-spacing:.14em;color:#9b91ad;margin-top:9px}
+.date-card small{display:block;font-size:10px;color:#80778e;margin-top:12px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:31px 0 16px}
+.section-head h2{font-family:var(--sans);font-weight:600;letter-spacing:-.045em;font-size:23px;margin:0}
+.section-head p{font-size:9px;letter-spacing:.12em;color:#80778e;margin:0}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.project-card{position:relative;isolation:isolate;overflow:hidden;min-height:365px;padding:24px 25px 21px;background:linear-gradient(145deg,rgba(24,20,39,.94),rgba(15,13,25,.94));border:1px solid rgba(190,169,255,.14);border-radius:22px;display:flex;flex-direction:column;box-shadow:0 18px 48px rgba(4,3,13,.23),inset 0 1px 0 rgba(255,255,255,.035);transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(190,169,255,.32);box-shadow:0 24px 58px rgba(6,3,20,.4),0 0 34px rgba(129,83,227,.09),inset 0 1px 0 rgba(255,255,255,.055)}
+.project-card:before{content:"";position:absolute;z-index:-1;width:230px;height:230px;border-radius:50%;right:-102px;top:-145px;background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%);pointer-events:none}
+.project-card:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.025),transparent 28%);z-index:-1}
+.card-2:before,.card-3:before,.card-4:before,.card-5:before{background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:1}
+.category{font-size:10px;font-weight:700;color:#d0bdff;letter-spacing:.035em}
+.category-en{font-size:8px;letter-spacing:.15em;color:#766d87}
+.card-2 .category,.card-3 .category,.card-4 .category,.card-5 .category{color:#d0bdff}
+.project-card h2{position:relative;z-index:1;font-family:var(--sans);font-size:25px;line-height:1.24;font-weight:600;letter-spacing:-.045em;margin:24px 0 6px;max-width:92%;text-wrap:pretty}
+.repo{position:relative;z-index:1;width:fit-content;font-size:11px;color:#bda4fa;text-decoration:none;overflow-wrap:anywhere;transition:color .18s ease}
+.repo:hover{color:#e5d8ff;text-decoration:underline;text-underline-offset:3px}
+.summary{font-size:13px;line-height:1.75;color:#b4adc3;margin:18px 0 14px;max-width:96%}
+.detail{border-top:1px solid rgba(191,169,255,.11);padding:11px 0 0;margin-top:9px}
+.detail span{font-size:9px;letter-spacing:.07em;color:#a897c9;font-weight:700}
+.detail p{font-size:12px;line-height:1.7;color:#cbc4d7;margin:5px 0 0}
+.growth{padding-bottom:13px}
+.reason{padding-bottom:13px}
+.signal{margin-top:auto;display:flex;gap:8px;align-items:center;color:#928aa2;font-size:10px;line-height:1.5;padding:10px 0 12px}
+.signal-dot{flex:0 0 auto;width:6px;height:6px;background:#b99aff;border-radius:50%;box-shadow:0 0 0 4px rgba(185,154,255,.11),0 0 12px rgba(185,154,255,.45)}
+.actions{display:flex;gap:8px;position:relative;z-index:1}
+.action{display:inline-flex;gap:14px;align-items:center;border:1px solid transparent;border-radius:999px;padding:10px 15px;font-size:11px;font-weight:650;text-decoration:none;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.action:hover{transform:translateY(-1px)}
+.action:active{transform:scale(.98)}
+.action-github{background:linear-gradient(135deg,#b99aff,#8058df);color:#fff;box-shadow:0 5px 18px rgba(129,84,224,.24)}
+.action-github:hover{background:linear-gradient(135deg,#cbb6ff,#956ff0);box-shadow:0 8px 25px rgba(129,84,224,.34)}
+.action-demo{background:rgba(255,255,255,.045);color:#e0d5f6;border-color:var(--line)}
+.action-demo:hover{background:rgba(177,143,255,.12);border-color:var(--line-strong)}
+.action:focus-visible,.mast-meta a:focus-visible,.repo:focus-visible{outline:2px solid #d4c1ff;outline-offset:3px}
+.card-index{position:absolute;right:23px;bottom:20px;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;color:#665a7a}
+.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:16px;margin-top:26px;color:#7f778e;font-size:10px;line-height:1.65}
+.footer a{color:#bda4fa;text-decoration:none}
+@media(max-width:720px){.masthead{height:64px;padding:0 17px}.mast-meta{gap:7px;font-size:10px}.mast-meta span{display:none}.mast-meta a{padding:8px 11px}.page{padding:36px 17px 42px}.hero{grid-template-columns:1fr;gap:15px;padding-bottom:25px}.hero h1{font-size:clamp(42px,12vw,54px);margin-top:17px}.hero p{font-size:13px}.date-card{justify-self:start;text-align:left;padding:10px 13px;display:flex;align-items:center;gap:11px;border-radius:14px}.date-day{font-size:28px}.date-month{margin:0 0 2px}.date-card small{margin:0 0 0 2px}.section-head{align-items:start;flex-direction:column;gap:7px;margin-top:25px}.section-head h2{font-size:21px}.cards{grid-template-columns:1fr;gap:12px}.project-card{min-height:340px;padding:20px;border-radius:19px}.project-card h2{font-size:23px;margin-top:21px}.summary{font-size:12px}.detail p{font-size:11px}.footer{flex-direction:column;gap:5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+  <header class="masthead"><div class="brand"><span class="brand-mark">G</span><div>GitHub Daily<small>OPEN SOURCE FIELDNOTES</small></div></div><div class="mast-meta"><span>登录后在对话中输入“今天的”</span><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer">GitHub Trending ↗</a></div></header>
+  <main class="page">
+    <section class="hero"><div><div class="eyebrow">普通人成长 · AI 办公 · 生活实验</div><h1>五个方向，<em>每天一点新发现。</em></h1><p>每天从 GitHub 挑选五个普通人能看懂、能体验的项目，覆盖数据分析、办公自动化、知识管理、创作和生活。看完就知道它能帮你做什么、如何开始。</p></div><div class="date-card"><div class="date-day">18</div><div class="date-month">2026 · 10 / TODAY'S EDITION</div><small>上海时间 2026-10-18</small></div></section>
+    <section class="section-head"><h2>今日五向精选</h2><p>5 PICKS　/　FOR EVERYDAY GROWTH</p></section>
+    <section class="cards"><article class="project-card card-1">
+      <div class="card-top"><span class="category">01 / AI + 数据分析</span><span class="category-en">AI + DATA</span></div>
+      <h2>AI Data Analyst Agent｜用一句话问懂 CSV</h2>
+      <a class="repo" href="https://github.com/Zephyrex21/ai-data-analyst-agent" target="_blank" rel="noopener noreferrer">Zephyrex21/ai-data-analyst-agent <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>浏览器里的 AI 数据分析工具：用自然语言提问，让 AI 生成 SQL/Python，在浏览器中对样例数据计算并展示图表和结果。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>想比较地区销售、看月度走势，或从表格里找变化，不想先写公式和代码。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>打开在线体验并载入内置样例，问“按月份比较销售额并画趋势图”，再看结果表和生成的 SQL/Python 是否支持结论。自己的文件先脱敏；CSV留在浏览器，问题文字会发送给所选模型服务。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练习提出可计算的问题、复核结果，并理解自然语言提问与 SQL/Python 计算的分工。</p></div>
+      <div class="detail"><span>学习价值</span><p>8.5/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>有一键内置样例和在线演示，仓库目前规模较小，适合先体验提问、计算、复核的分析流程。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/Zephyrex21/ai-data-analyst-agent" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://ai-data-analyst-agent-one.vercel.app/" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <span class="card-index">01</span>
+    </article>
+<article class="project-card card-2">
+      <div class="card-top"><span class="category">02 / AI办公自动化</span><span class="category-en">AI + WORKFLOW</span></div>
+      <h2>Dodaios｜让桌面 AI 助理分步办事</h2>
+      <a class="repo" href="https://github.com/Dodaios/Dodaios" target="_blank" rel="noopener noreferrer">Dodaios/Dodaios <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>可安装在 Windows、macOS、Linux 的桌面 AI 助理，能协调浏览器和其他 Agent；涉及系统变更的操作会先请求确认。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>让它从几份练习资料中提取重点并起草周报，观察哪些步骤适合交给 AI、哪些需要自己确认。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>安装桌面版，按官方指引连接支持的模型或本地模型；先对测试文件夹发起只读整理任务，熟悉审批记录后再尝试会修改文件的操作。模型服务可能需要账号或付费。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>学习把工作拆成可检查的步骤，理解 AI 助手的工具权限与人工确认点。</p></div>
+      <div class="detail"><span>学习价值</span><p>8.2/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>仓库有持续更新和桌面演示；跨平台但需要配置模型，建议先用只读任务熟悉操作边界。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/Dodaios/Dodaios" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">02</span>
+    </article>
+<article class="project-card card-3">
+      <div class="card-top"><span class="category">03 / AI知识管理</span><span class="category-en">AI + KNOWLEDGE</span></div>
+      <h2>Khoj｜给自己的资料做 AI 搜索</h2>
+      <a class="repo" href="https://github.com/khoj-ai/khoj" target="_blank" rel="noopener noreferrer">khoj-ai/khoj <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>开源个人知识助手，可从网页、PDF、Markdown、Word 等资料中检索并回答，也能从浏览器或桌面入口使用。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>把公众号文章或课程笔记整理起来，再问“我写过哪些关于 AI 小白的观点”，减少翻文件找段落的时间。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>打开官方云端体验并登录，先用公开或非敏感笔记提问，再回到原文核对答案。若希望资料留在自己的电脑，需要按文档自托管并配置模型。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练习建立可检索的资料库、回到原文核对回答，并理解云端体验和本地部署的区别。</p></div>
+      <div class="detail"><span>学习价值</span><p>8.6/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>开源社区成熟，官方提供云端体验；先用公开资料试用，上传私密文件前确认服务的数据处理方式。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/khoj-ai/khoj" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">03</span>
+    </article>
+<article class="project-card card-4">
+      <div class="card-top"><span class="category">04 / AI创作与内容</span><span class="category-en">AI + CREATION</span></div>
+      <h2>unbagrnd｜在本机给图片去背景</h2>
+      <a class="repo" href="https://github.com/zidniryi/unbagrnd" target="_blank" rel="noopener noreferrer">zidniryi/unbagrnd <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>免费的跨平台 AI 去背景工具，可单张或批量处理照片、手动修边并导出透明图，适合公众号配图和商品素材。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>给公众号封面、文章配图或商品图抠出人物和物体，方便换背景与排版。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>下载 Windows 安装包，首次使用等待约 170 MB 模型下载；拖入一张不敏感图片去背，检查发丝和边缘，手动修正后导出透明 PNG。无需账号或 API。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>学会用 AI 制作可复用的透明素材，并养成检查发丝、阴影和边缘的习惯。</p></div>
+      <div class="detail"><span>学习价值</span><p>8.5/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>近期有版本更新，修复桌面大模型内存问题；无需模型 API，图像在本机处理，适合直观看到 AI 如何辅助做图。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/zidniryi/unbagrnd" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">04</span>
+    </article>
+<article class="project-card card-5">
+      <div class="card-top"><span class="category">05 / AI生活实验室</span><span class="category-en">AI + LIFE</span></div>
+      <h2>Lap｜用 AI 找回旅行照片</h2>
+      <a class="repo" href="https://github.com/julyx10/lap" target="_blank" rel="noopener noreferrer">julyx10/lap <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>本地照片管理器，支持按文字和画面内容找图、相似度搜索、人脸归类及地图浏览；照片留在自己的硬盘。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>旅行或演唱会照片堆在电脑里，想按“海边”“舞台”等描述找旧照片，或沿地图回忆拍摄路线。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>下载 Windows 10/11 安装包，选一个小型测试照片文件夹；索引后试中文关键词、相似照片和地图。搜索不需要云端模型 API。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>体验 AI 如何识别和整理个人照片，并养成核对自动分类与地点信息的习惯。</p></div>
+      <div class="detail"><span>学习价值</span><p>8.6/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>社区关注度较高，10月12日发布版本新增拼贴相册和离线浏览；有 Windows 安装包，适合拿旅行照片动手体验。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/julyx10/lap" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">05</span>
+    </article></section>
+    <footer class="footer"><span>项目来源：GitHub 仓库与 README。简介和上手方式按项目公开资料整理。</span><span>更新于上海时间 2026-10-18</span></footer>
+  </main>
+</body>
+</html>
