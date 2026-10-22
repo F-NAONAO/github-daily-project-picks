@@ -7,7 +7,7 @@
   <meta name="description" content="GitHub Daily：每天精选五个帮助普通人成长、提效和改善生活的开源项目。">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%237851da'/%3E%3Ctext x='16' y='23' font-size='21' text-anchor='middle' fill='%23fff' font-family='Arial'%3EG%3C/text%3E%3C/svg%3E">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
-  <title>GitHub Daily · 2026.10.21</title>
+  <title>GitHub Daily · 2026.10.22</title>
   <style>
 :root{color-scheme:dark;--ink:#f4f0ff;--muted:#a8a1ba;--muted-2:#817994;--line:rgba(191,169,255,.15);--line-strong:rgba(191,169,255,.28);--purple:#c6adff;--purple-bright:#a984ff;--surface:rgba(21,17,34,.82);--surface-deep:#100d1b;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Microsoft YaHei","PingFang SC",sans-serif;font-family:var(--sans);color:var(--ink);background:#090811;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 *{box-sizing:border-box}
@@ -77,74 +77,74 @@ a{color:inherit}
 <body>
   <header class="masthead"><div class="brand"><span class="brand-mark">G</span><div>GitHub Daily<small>OPEN SOURCE FIELDNOTES</small></div></div><div class="mast-meta"><span>登录后在对话中输入“今天的”</span><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer">GitHub Trending ↗</a></div></header>
   <main class="page">
-    <section class="hero"><div><div class="eyebrow">普通人成长 · AI 办公 · 生活实验</div><h1>五个方向，<em>每天一点新发现。</em></h1><p>每天从 GitHub 挑选五个普通人能看懂、能体验的项目，覆盖数据分析、办公自动化、知识管理、创作和生活。看完就知道它能帮你做什么、如何开始。</p></div><div class="date-card"><div class="date-day">21</div><div class="date-month">2026 · 10 / TODAY'S EDITION</div><small>上海时间 2026-10-21</small></div></section>
+    <section class="hero"><div><div class="eyebrow">普通人成长 · AI 办公 · 生活实验</div><h1>五个方向，<em>每天一点新发现。</em></h1><p>每天从 GitHub 挑选五个普通人能看懂、能体验的项目，覆盖数据分析、办公自动化、知识管理、创作和生活。看完就知道它能帮你做什么、如何开始。</p></div><div class="date-card"><div class="date-day">22</div><div class="date-month">2026 · 10 / TODAY'S EDITION</div><small>上海时间 2026-10-22</small></div></section>
     <section class="section-head"><h2>今日五向精选</h2><p>5 PICKS　/　FOR EVERYDAY GROWTH</p></section>
     <section class="cards"><article class="project-card card-1">
       <div class="card-top"><span class="category">01 / AI + 数据分析</span><span class="category-en">AI + DATA</span></div>
-      <h2>Dataloupe｜点开 CSV 就能探索数据</h2>
-      <a class="repo" href="https://github.com/aurelio-nakamura/dataloupe" target="_blank" rel="noopener noreferrer">aurelio-nakamura/dataloupe <span>↗</span></a>
-      <div class="detail"><span>一句话介绍</span><p>把 CSV、Excel 等文件变成独立 HTML 数据探索页，可筛选、排序、看统计与图表；还提供供 AI 助手查询本地数据的接口。</p></div>
-      <div class="detail"><span>普通人使用场景</span><p>拿公开样例练习观察数据分布、缺失值与变量关系；暂不上传含个人或公司信息的表格。</p></div>
-      <div class="detail"><span>小白体验步骤</span><p>先打开在线演示的 penguins 样例，试筛选、排序和查看统计图。想看自己的文件再装 Node.js 18+，本机运行 npx dataloupe 文件.csv --open。</p></div>
-      <div class="detail growth"><span>可以提升</span><p>从数据分布和图表里发现问题；以后接入 MCP 时，还能练习让 AI 查数据并核对结果。</p></div>
+      <h2>Datell｜用一句话把 CSV 变成互动报表</h2>
+      <a class="repo" href="https://github.com/aiis2/datell" target="_blank" rel="noopener noreferrer">aiis2/datell <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>中文版本地数据分析桌面工具，导入 CSV/Excel 后用自然语言提问题，生成可交互图表与 HTML、Excel、PDF 等报告。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>拿公开销售数据问“最近销售下滑在哪些月份、哪个地区贡献最高”，边看图边核对口径。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>GitHub 仓库 → Releases 下载 Windows 免安装版 1.0.6 → 导入练习 CSV。AI 分析要配置模型 API Key，也可接本地 Ollama；先不要导入公司或个人敏感表。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>从提问、清洗、图表到报告走一遍；练习先核对指标口径和证据，再接受 AI 结论。</p></div>
       <div class="detail"><span>学习价值</span><p>8.6/10</p></div>
-      <div class="detail reason"><span>推荐理由</span><p>README 说明页面可离线使用、数据留在浏览器，并提供在线样例；基础体验无需 API Key。</p></div>
-      <div class="actions"><a class="action action-github" href="https://github.com/aurelio-nakamura/dataloupe" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://aurelio-nakamura.github.io/dataloupe/embed/" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <div class="detail reason"><span>推荐理由</span><p>中文界面、Windows 免安装版、Excel/CSV 导入和报表导出齐全；当前约 3★/303 次提交，仍属早期工具，AI 需自备模型。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/aiis2/datell" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
       <span class="card-index">01</span>
     </article>
 <article class="project-card card-2">
       <div class="card-top"><span class="category">02 / AI办公自动化</span><span class="category-en">AI + WORKFLOW</span></div>
-      <h2>Open Cowork｜让 AI 试做办公任务</h2>
-      <a class="repo" href="https://github.com/OpenCoworkAI/open-cowork" target="_blank" rel="noopener noreferrer">OpenCoworkAI/open-cowork <span>↗</span></a>
-      <div class="detail"><span>一句话介绍</span><p>Windows/macOS 桌面 AI 助手，可在指定文件夹里处理文档、表格、PPT 和网页任务，并展示执行过程。</p></div>
-      <div class="detail"><span>普通人使用场景</span><p>在空的练习文件夹里，让它根据公开材料整理一页简报，观察它如何拆解任务并生成文件。</p></div>
-      <div class="detail"><span>小白体验步骤</span><p>下载 Windows/macOS 客户端→选一个新建的空文件夹→配置模型服务和 API Key→用公开资料试做。先逐步确认结果，不连接私人文件或群聊。</p></div>
-      <div class="detail growth"><span>可以提升</span><p>把办公需求拆成输入、步骤和验收条件；学习给 AI 设定文件范围、确认点和权限边界。</p></div>
-      <div class="detail"><span>学习价值</span><p>7.7/10</p></div>
-      <div class="detail reason"><span>推荐理由</span><p>官方仓库有 Windows/macOS 客户端且近期仍在更新；使用需配置模型 API，桌面 Agent 有文件操作能力，建议从空文件夹开始。</p></div>
-      <div class="actions"><a class="action action-github" href="https://github.com/OpenCoworkAI/open-cowork" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <h2>PilotDeck｜把办公任务交给桌面 AI 助手</h2>
+      <a class="repo" href="https://github.com/OpenBMB/PilotDeck" target="_blank" rel="noopener noreferrer">OpenBMB/PilotDeck <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>AI 工作台可接收文件和目标，处理办公文档、Excel、PPT，并展示执行过程与文件成果。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>把几份公开资料整理成一页汇报或练习表格，观察它怎样分步骤完成并留出复核空间。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>先开官网在线试玩沙盒看流程；想实际生成，下载 Windows/macOS 客户端并配置模型 API，或本机 Ollama。用公开材料和新建文件夹练习。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>把需求、素材、输出格式、限制条件写清楚；学习检查 AI 处理文件和数值的过程，确认后再交付。</p></div>
+      <div class="detail"><span>学习价值</span><p>9/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>10 月 15 日发布 2.0，官方提供 Windows/macOS 客户端和互动演示；生成需模型服务，也支持本地 Ollama。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/OpenBMB/PilotDeck" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://pilotdeck.openbmb.cn/PilotDeck_%E5%9C%A8%E7%BA%BF%E8%AF%95%E7%8E%A9.html" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
       <span class="card-index">02</span>
     </article>
 <article class="project-card card-3">
       <div class="card-top"><span class="category">03 / AI知识管理</span><span class="category-en">AI + KNOWLEDGE</span></div>
-      <h2>Lilbee｜给 Obsidian 笔记装上本地 AI</h2>
-      <a class="repo" href="https://github.com/tobocop2/obsidian-lilbee" target="_blank" rel="noopener noreferrer">tobocop2/obsidian-lilbee <span>↗</span></a>
-      <div class="detail"><span>一句话介绍</span><p>Obsidian 插件，可用本地模型搜索笔记、PDF 和网页资料，回答时附来源，适合搭建自己的可追溯知识库。</p></div>
-      <div class="detail"><span>普通人使用场景</span><p>把公开的 AI 入门文章或 PDF 放进笔记库，问一个具体问题，再顺着引用回原文核对。</p></div>
-      <div class="detail"><span>小白体验步骤</span><p>安装 Obsidian→设置→第三方插件搜索 lilbee→按向导下载本地服务和模型。首次模型下载较大；建议 16GB 内存，不需要 API Key。</p></div>
-      <div class="detail growth"><span>可以提升</span><p>练习整理资料、针对资料提问并沿引用回到原文，建立有证据的公众号选题研究流程。</p></div>
-      <div class="detail"><span>学习价值</span><p>7.2/10</p></div>
-      <div class="detail reason"><span>推荐理由</span><p>可从 Obsidian 社区插件商店安装，默认本地处理；目前约 10★、由单人维护，社区验证有限，首次模型下载需要时间和空间。</p></div>
-      <div class="actions"><a class="action action-github" href="https://github.com/tobocop2/obsidian-lilbee" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <h2>OpenWiki｜把收藏内容整理成自己的知识库</h2>
+      <a class="repo" href="https://github.com/kdsz001/OpenWiki" target="_blank" rel="noopener noreferrer">kdsz001/OpenWiki <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>桌面知识管理工具，主动收藏剪贴板文字、图片和网页，再让 AI 归纳成知识页、关系图和周报；数据主库保存在本地。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>把公众号选题需要的公开文章保存起来，按主题查看 AI 整理的材料，减少资料散落。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>下载 Windows 安装包→连接 AI 账号或填 API Key→复制并保存一篇公开文章，查看生成的知识页和关联图。初次别导入私密资料。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练习筛选资料、建立主题、回看内容脉络，把搜集素材变成可复用的个人知识库。</p></div>
+      <div class="detail"><span>学习价值</span><p>8.8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>654★、132 forks，提供 Windows/macOS 客户端；AI 需自备账号或 Key。网页读取和翻译默认可能调用 Jina、Google，可在设置关闭。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/kdsz001/OpenWiki" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
       <span class="card-index">03</span>
     </article>
 <article class="project-card card-4">
       <div class="card-top"><span class="category">04 / AI创作与内容</span><span class="category-en">AI + CREATION</span></div>
-      <h2>OpenMAIC｜把主题变成互动课堂</h2>
-      <a class="repo" href="https://github.com/THU-MAIC/OpenMAIC" target="_blank" rel="noopener noreferrer">THU-MAIC/OpenMAIC <span>↗</span></a>
-      <div class="detail"><span>一句话介绍</span><p>输入主题或资料，生成多 AI 角色互动课堂，包含讲解、问答和活动，并可导出 PPTX 或离线 HTML。</p></div>
-      <div class="detail"><span>普通人使用场景</span><p>把公众号选题改成一节短课，让 AI 生成讲解、测验和互动演示，再检查事实是否准确。</p></div>
-      <div class="detail"><span>小白体验步骤</span><p>先打开在线演示，在「发现」浏览课程；自行生成课堂需按页面要求登录并配置模型服务。自托管还要 Node.js 22.19、PostgreSQL 和模型 API Key。</p></div>
-      <div class="detail growth"><span>可以提升</span><p>把主题拆成讲解、练习和反馈环节，练习设计教学内容；对 AI 给出的知识点回查来源。</p></div>
+      <h2>OpenCreator｜公众号和短视频的 AI 内容工作台</h2>
+      <a class="repo" href="https://github.com/krillinai/OpenCreator" target="_blank" rel="noopener noreferrer">krillinai/OpenCreator <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>桌面创作工作台可从选题、链接或文档起草文章、短视频脚本和小红书笔记，也能做图片、配音与视频翻译。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>给「AI人话铺子」一个主题和公开资料，生成文章提纲，再拆出短视频口播稿供你校订。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>在仓库 Releases 下载桌面版→按向导复用本机 Codex 登录或配置模型→Dashboard 选“文章写作”，输入主题和公开资料，检查后再导出。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>把受众、平台、篇幅、口吻和事实来源交代清楚；练习改 AI 初稿，而不是照搬发布。</p></div>
       <div class="detail"><span>学习价值</span><p>8.8/10</p></div>
-      <div class="detail reason"><span>推荐理由</span><p>README 提供在线演示及 PPTX/HTML 导出；GitHub 当前约 41.2k★，10 月 18 日发布 v1.2.1。自建课堂仍需模型服务。</p></div>
-      <div class="actions"><a class="action action-github" href="https://github.com/THU-MAIC/OpenMAIC" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://open.maic.chat/" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <div class="detail reason"><span>推荐理由</span><p>README 列出 10 项可用创作工具；约 13.8k★、支持 43 种界面语言。模型、配音或视频生成服务可能另需额度。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/krillinai/OpenCreator" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
       <span class="card-index">04</span>
     </article>
 <article class="project-card card-5">
       <div class="card-top"><span class="category">05 / AI生活实验室</span><span class="category-en">AI + LIFE</span></div>
-      <h2>MCP Music Studio｜和 AI 一起做音乐</h2>
-      <a class="repo" href="https://github.com/linxule/mcp-music-studio" target="_blank" rel="noopener noreferrer">linxule/mcp-music-studio <span>↗</span></a>
-      <div class="detail"><span>一句话介绍</span><p>把 AI 助手接入音乐工作台：按描述生成可播放、可编辑的曲谱或节奏，还能边试听边改并导出音频。</p></div>
-      <div class="detail"><span>普通人使用场景</span><p>描述一段轻快的背景音乐，试听后继续要求“慢一点”或“加鼓点”，感受 AI 修改如何改变旋律。</p></div>
-      <div class="detail"><span>小白体验步骤</span><p>在支持 MCP 的 Claude 等助手中添加 https://music-studio.linxule.com/mcp，再描述想要的旋律；页面未发声时点播放。需有可用的 AI 助手账号，无需本机安装。</p></div>
-      <div class="detail growth"><span>可以提升</span><p>把情绪和审美写成具体音乐要求，再边听边调整；理解生成式 AI 的创作边界，并检查分享内容与授权。</p></div>
-      <div class="detail"><span>学习价值</span><p>7.7/10</p></div>
-      <div class="detail reason"><span>推荐理由</span><p>官方 README 提供免本地安装的托管 MCP 地址；仓库约 75★、282 次提交，体验前提是已有兼容 MCP 的 AI 助手。</p></div>
-      <div class="actions"><a class="action action-github" href="https://github.com/linxule/mcp-music-studio" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <h2>Agent Arena｜看 AI 角色在 3D 世界里互动</h2>
+      <a class="repo" href="https://github.com/sametkabay/agent-arena" target="_blank" rel="noopener noreferrer">sametkabay/agent-arena <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>浏览器里的多角色 AI 沙盒：把不同人设放进办公室、森林或太空场景，看角色闲聊，也能和某个角色私聊。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>用同一个问题分别问不同人设，对比回答如何受角色设定影响，直观感受 AI 角色和多智能体互动。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>从仓库 README 进入 Live demo，选昵称和地图；要启动 AI 对话，在设置添加 OpenAI/Gemini/Claude 等模型 API Key。先用不含隐私的问题试聊。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>理解角色设定和 AI 模型如何影响回答；练习给 AI 明确背景、身份与任务，再比较结果。</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>当前 14★、15 个 Issue、8 个 PR；仓库标注 v0.1 早期预览。在线 Demo 无需下载，云模型交互可能受提供商跨域设置影响。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/sametkabay/agent-arena" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
       <span class="card-index">05</span>
     </article></section>
-    <footer class="footer"><span>项目来源：GitHub 仓库与 README。简介和上手方式按项目公开资料整理。</span><span>更新于上海时间 2026-10-21</span></footer>
+    <footer class="footer"><span>项目来源：GitHub 仓库与 README。简介和上手方式按项目公开资料整理。</span><span>更新于上海时间 2026-10-22</span></footer>
   </main>
 </body>
 </html>
