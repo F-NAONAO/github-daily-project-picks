@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090811">
+  <meta name="description" content="GitHub Daily：每天精选五个帮助普通人成长、提效和改善生活的开源项目。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%237851da'/%3E%3Ctext x='16' y='23' font-size='21' text-anchor='middle' fill='%23fff' font-family='Arial'%3EG%3C/text%3E%3C/svg%3E">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+  <title>GitHub Daily · 2026.10.28</title>
+  <style>
+:root{color-scheme:dark;--ink:#f4f0ff;--muted:#a8a1ba;--muted-2:#817994;--line:rgba(191,169,255,.15);--line-strong:rgba(191,169,255,.28);--purple:#c6adff;--purple-bright:#a984ff;--surface:rgba(21,17,34,.82);--surface-deep:#100d1b;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Microsoft YaHei","PingFang SC",sans-serif;font-family:var(--sans);color:var(--ink);background:#090811;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{position:relative;margin:0;min-height:100vh;overflow-x:hidden;background:radial-gradient(ellipse at 50% -15%,rgba(126,82,235,.24),transparent 43%),radial-gradient(ellipse at 100% 47%,rgba(87,57,157,.13),transparent 32%),linear-gradient(180deg,#0b0913 0%,#090811 55%,#0d0a16 100%);color:var(--ink)}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(205,188,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(205,188,255,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+a{color:inherit}
+.masthead,.page{position:relative;z-index:1}
+.masthead{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,6vw,92px);border-bottom:1px solid rgba(191,169,255,.11);background:rgba(9,8,17,.58);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.045em;font-size:15px}
+.brand-mark{width:35px;height:35px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#bca0ff,#7851da);color:#fff;font-family:var(--sans);font-size:18px;font-weight:700;box-shadow:0 5px 22px rgba(144,101,255,.28),inset 0 1px 0 rgba(255,255,255,.32)}
+.brand small{display:block;color:#8b829f;font-size:9px;letter-spacing:.19em;font-weight:650;margin-top:3px}
+.mast-meta{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:11px}
+.mast-meta a{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:9px 13px;background:rgba(255,255,255,.035);transition:all .2s ease}
+.mast-meta a:hover{border-color:var(--line-strong);background:rgba(177,143,255,.1);color:#e9deff}
+.page{max-width:1270px;margin:auto;padding:58px clamp(20px,6vw,92px) 62px}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:34px;align-items:end;padding:4px 0 36px;border-bottom:1px solid var(--line)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;color:#c4adf4;font-weight:650;border:1px solid rgba(181,147,255,.19);background:rgba(159,119,255,.07);border-radius:999px;padding:8px 12px}
+.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:#b99aff;box-shadow:0 0 10px rgba(185,154,255,.85)}
+.hero h1{font-family:var(--sans);font-size:clamp(39px,6vw,72px);font-weight:650;letter-spacing:-.075em;line-height:1.04;margin:21px 0 15px;max-width:790px;text-wrap:balance}
+.hero h1 em{font-weight:650;color:#c6adff;font-style:normal;text-shadow:0 0 34px rgba(158,117,255,.22)}
+.hero p{max-width:670px;font-size:14px;color:var(--muted);line-height:1.8;margin:0}
+.date-card{justify-self:end;text-align:right;padding:16px 18px 14px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(35,27,54,.74),rgba(17,14,28,.68));box-shadow:0 16px 45px rgba(5,3,15,.2),inset 0 1px 0 rgba(255,255,255,.045)}
+.date-day{font-family:var(--sans);font-size:44px;font-weight:600;line-height:1;color:#e1d3ff;letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+.date-month{font-size:9px;letter-spacing:.14em;color:#9b91ad;margin-top:9px}
+.date-card small{display:block;font-size:10px;color:#80778e;margin-top:12px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:31px 0 16px}
+.section-head h2{font-family:var(--sans);font-weight:600;letter-spacing:-.045em;font-size:23px;margin:0}
+.section-head p{font-size:9px;letter-spacing:.12em;color:#80778e;margin:0}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.project-card{position:relative;isolation:isolate;overflow:hidden;min-height:365px;padding:24px 25px 21px;background:linear-gradient(145deg,rgba(24,20,39,.94),rgba(15,13,25,.94));border:1px solid rgba(190,169,255,.14);border-radius:22px;display:flex;flex-direction:column;box-shadow:0 18px 48px rgba(4,3,13,.23),inset 0 1px 0 rgba(255,255,255,.035);transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(190,169,255,.32);box-shadow:0 24px 58px rgba(6,3,20,.4),0 0 34px rgba(129,83,227,.09),inset 0 1px 0 rgba(255,255,255,.055)}
+.project-card:before{content:"";position:absolute;z-index:-1;width:230px;height:230px;border-radius:50%;right:-102px;top:-145px;background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%);pointer-events:none}
+.project-card:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.025),transparent 28%);z-index:-1}
+.card-2:before,.card-3:before,.card-4:before,.card-5:before{background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:1}
+.category{font-size:10px;font-weight:700;color:#d0bdff;letter-spacing:.035em}
+.category-en{font-size:8px;letter-spacing:.15em;color:#766d87}
+.card-2 .category,.card-3 .category,.card-4 .category,.card-5 .category{color:#d0bdff}
+.project-card h2{position:relative;z-index:1;font-family:var(--sans);font-size:25px;line-height:1.24;font-weight:600;letter-spacing:-.045em;margin:24px 0 6px;max-width:92%;text-wrap:pretty}
+.repo{position:relative;z-index:1;width:fit-content;font-size:11px;color:#bda4fa;text-decoration:none;overflow-wrap:anywhere;transition:color .18s ease}
+.repo:hover{color:#e5d8ff;text-decoration:underline;text-underline-offset:3px}
+.summary{font-size:13px;line-height:1.75;color:#b4adc3;margin:18px 0 14px;max-width:96%}
+.detail{border-top:1px solid rgba(191,169,255,.11);padding:11px 0 0;margin-top:9px}
+.detail span{font-size:9px;letter-spacing:.07em;color:#a897c9;font-weight:700}
+.detail p{font-size:12px;line-height:1.7;color:#cbc4d7;margin:5px 0 0}
+.growth{padding-bottom:13px}
+.reason{padding-bottom:13px}
+.signal{margin-top:auto;display:flex;gap:8px;align-items:center;color:#928aa2;font-size:10px;line-height:1.5;padding:10px 0 12px}
+.signal-dot{flex:0 0 auto;width:6px;height:6px;background:#b99aff;border-radius:50%;box-shadow:0 0 0 4px rgba(185,154,255,.11),0 0 12px rgba(185,154,255,.45)}
+.actions{display:flex;gap:8px;position:relative;z-index:1}
+.action{display:inline-flex;gap:14px;align-items:center;border:1px solid transparent;border-radius:999px;padding:10px 15px;font-size:11px;font-weight:650;text-decoration:none;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.action:hover{transform:translateY(-1px)}
+.action:active{transform:scale(.98)}
+.action-github{background:linear-gradient(135deg,#b99aff,#8058df);color:#fff;box-shadow:0 5px 18px rgba(129,84,224,.24)}
+.action-github:hover{background:linear-gradient(135deg,#cbb6ff,#956ff0);box-shadow:0 8px 25px rgba(129,84,224,.34)}
+.action-demo{background:rgba(255,255,255,.045);color:#e0d5f6;border-color:var(--line)}
+.action-demo:hover{background:rgba(177,143,255,.12);border-color:var(--line-strong)}
+.action:focus-visible,.mast-meta a:focus-visible,.repo:focus-visible{outline:2px solid #d4c1ff;outline-offset:3px}
+.card-index{position:absolute;right:23px;bottom:20px;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;color:#665a7a}
+.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:16px;margin-top:26px;color:#7f778e;font-size:10px;line-height:1.65}
+.footer a{color:#bda4fa;text-decoration:none}
+@media(max-width:720px){.masthead{height:64px;padding:0 17px}.mast-meta{gap:7px;font-size:10px}.mast-meta span{display:none}.mast-meta a{padding:8px 11px}.page{padding:36px 17px 42px}.hero{grid-template-columns:1fr;gap:15px;padding-bottom:25px}.hero h1{font-size:clamp(42px,12vw,54px);margin-top:17px}.hero p{font-size:13px}.date-card{justify-self:start;text-align:left;padding:10px 13px;display:flex;align-items:center;gap:11px;border-radius:14px}.date-day{font-size:28px}.date-month{margin:0 0 2px}.date-card small{margin:0 0 0 2px}.section-head{align-items:start;flex-direction:column;gap:7px;margin-top:25px}.section-head h2{font-size:21px}.cards{grid-template-columns:1fr;gap:12px}.project-card{min-height:340px;padding:20px;border-radius:19px}.project-card h2{font-size:23px;margin-top:21px}.summary{font-size:12px}.detail p{font-size:11px}.footer{flex-direction:column;gap:5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+  <header class="masthead"><div class="brand"><span class="brand-mark">G</span><div>GitHub Daily<small>OPEN SOURCE FIELDNOTES</small></div></div><div class="mast-meta"><span>登录后在对话中输入“今天的”</span><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer">GitHub Trending ↗</a></div></header>
+  <main class="page">
+    <section class="hero"><div><div class="eyebrow">普通人成长 · AI 办公 · 生活实验</div><h1>五个方向，<em>每天一点新发现。</em></h1><p>每天从 GitHub 挑选五个普通人能看懂、能体验的项目，覆盖数据分析、办公自动化、知识管理、创作和生活。看完就知道它能帮你做什么、如何开始。</p></div><div class="date-card"><div class="date-day">28</div><div class="date-month">2026 · 10 / TODAY'S EDITION</div><small>上海时间 2026-10-28</small></div></section>
+    <section class="section-head"><h2>今日五向精选</h2><p>5 PICKS　/　FOR EVERYDAY GROWTH</p></section>
+    <section class="cards"><article class="project-card card-1">
+      <div class="card-top"><span class="category">01 / AI + 数据分析</span><span class="category-en">AI + DATA</span></div>
+      <h2>IncarnaMind：让 AI 对着表格和文件写分析</h2>
+      <a class="repo" href="https://github.com/IncarnaMind/IncarnaMind" target="_blank" rel="noopener noreferrer">IncarnaMind/IncarnaMind <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>Windows、macOS、Linux 桌面应用，可读表格和文档、生成带出处的分析报告，并逐句核对文字和图表数据；目前仍是试用版。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>把一份销售或运营表和相关说明交给 AI，让它生成图表与结论；再点结论查看对应来源，检查数字有没有写错。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>先看官方演示；从 GitHub Releases 下载 Windows 测试版，用虚构或脱敏表格试跑；分析需要连接支持的云模型或 Ollama。该测试版未签名。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>从表格提炼指标、写清分析结论、对照来源核查 AI 生成的数字</p></div>
+      <div class="detail"><span>学习价值</span><p>6.5/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>每条结论和图表都能回看来源，适合练习数据报告；但目前是未签名的测试版，首次安装会有系统安全提示，不适合放真实敏感数据。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/IncarnaMind/IncarnaMind" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">01</span>
+    </article>
+<article class="project-card card-2">
+      <div class="card-top"><span class="category">02 / AI办公自动化</span><span class="category-en">AI + WORKFLOW</span></div>
+      <h2>Rowboat：能记住工作上下文的 AI 同事</h2>
+      <a class="repo" href="https://github.com/rowboatlabs/rowboat" target="_blank" rel="noopener noreferrer">rowboatlabs/rowboat <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>跨平台桌面 AI 助手，可整理会议录音和摘要，把项目资料保存成本机 Markdown 知识图谱，也可选接 Google 服务或 MCP 工具。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>整理一次项目会议，生成摘要和待办，再把后续资料加进同一个项目，回头让助手基于记录继续回答。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>从官方页面下载 Windows、macOS 或 Linux 版；连接自己的模型 API Key 或本地 Ollama；先试一段会议纪要和一个项目文件夹。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>会议内容提炼、任务跟进、让 AI 使用自己的工作资料回答</p></div>
+      <div class="detail"><span>学习价值</span><p>7/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>桌面安装包和本地 Markdown 记忆适合直接体验；使用 AI 需要配置模型，连接 Google 或其他工具还要额外设置。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/rowboatlabs/rowboat" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">02</span>
+    </article>
+<article class="project-card card-3">
+      <div class="card-top"><span class="category">03 / AI知识管理</span><span class="category-en">AI + KNOWLEDGE</span></div>
+      <h2>Linkit：给收藏的网页建一个能搜索的知识库</h2>
+      <a class="repo" href="https://github.com/blue-idea/linkit" target="_blank" rel="noopener noreferrer">blue-idea/linkit <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>开源桌面书签管理器，可整理网页收藏、生成摘要、语义搜索和查看知识关系；数据默认保存在本机，无需注册。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>收藏公众号选题和资料链接，之后按主题搜索找回，让 AI 先概括文章重点，减少反复翻浏览器历史。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>下载安装 Windows 版，先从 Chrome 或 Edge 导入书签；基础收藏可离线用，AI 摘要和语义搜索需配置兼容模型 API 或本地 Ollama。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>信息筛选、知识归档、用检索找回资料并检查 AI 摘要</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>免账号、跨平台且本地优先，适合马上整理已有资料；AI功能需要自己准备模型服务或 API Key。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/blue-idea/linkit" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">03</span>
+    </article>
+<article class="project-card card-4">
+      <div class="card-top"><span class="category">04 / AI创作与内容</span><span class="category-en">AI + CREATION</span></div>
+      <h2>Postiz：把内容创作和发布排期放在一起</h2>
+      <a class="repo" href="https://github.com/gitroomhq/postiz-app" target="_blank" rel="noopener noreferrer">gitroomhq/postiz-app <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>开源社交内容管理平台，提供 AI 文案、图片和视频辅助，可把内容草拟、排期与效果回看放进同一工作流。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>围绕公众号选题先生成几种短文案和配图思路，再改成适合不同社交渠道的版本并安排发布时间。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>可先体验 Postiz Cloud 的注册版和 AI Copilot；README 标注云版有 7 天试用。微信公众号不在 README 展示的主要渠道中，发公众号需手动复制；自建版需要 Docker、数据库等配置。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>选题拆解、跨平台改写、内容排期与效果复盘</p></div>
+      <div class="detail"><span>学习价值</span><p>7/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>AI 写作与排期可以在一个界面中试；云版试用结束后可能收费，且它不是微信公众号直连工具。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/gitroomhq/postiz-app" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">04</span>
+    </article>
+<article class="project-card card-5">
+      <div class="card-top"><span class="category">05 / AI生活实验室</span><span class="category-en">AI + LIFE</span></div>
+      <h2>RemoteAI Nomads：用地图比较旅居城市</h2>
+      <a class="repo" href="https://github.com/cubxxw/RemoteAI-Nomads" target="_blank" rel="noopener noreferrer">cubxxw/RemoteAI-Nomads <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>面向中文远程工作者的城市探索页，可调整偏好权重、比较生活成本和季节舒适度并联动地图；线上页面提供 AI 助手。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>挑几个考虑短住或旅行的城市，调整预算、气候等偏好看排序，再让助手按自己的生活习惯补充比较。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>打开在线排行页，拖动偏好项并查看城市详情即可；如果准备实际出行，再核对签证、费用和天气等官方信息。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>把生活偏好变成可比较的条件，辨别 AI 建议与需要核实的事实</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>中文网页无需安装就能体验，地图和偏好排序直观；费用与季节数据适合初筛，不应直接当成预订依据。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/cubxxw/RemoteAI-Nomads" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://roamorrow.com/nomads/" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <span class="card-index">05</span>
+    </article></section>
+    <footer class="footer"><span>项目来源：GitHub 仓库与 README。简介和上手方式按项目公开资料整理。</span><span>更新于上海时间 2026-10-28</span></footer>
+  </main>
+</body>
+</html>
