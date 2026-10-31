@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090811">
+  <meta name="description" content="GitHub Daily：每天精选五个帮助普通人成长、提效和改善生活的开源项目。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%237851da'/%3E%3Ctext x='16' y='23' font-size='21' text-anchor='middle' fill='%23fff' font-family='Arial'%3EG%3C/text%3E%3C/svg%3E">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+  <title>GitHub Daily · 2026.10.31</title>
+  <style>
+:root{color-scheme:dark;--ink:#f4f0ff;--muted:#a8a1ba;--muted-2:#817994;--line:rgba(191,169,255,.15);--line-strong:rgba(191,169,255,.28);--purple:#c6adff;--purple-bright:#a984ff;--surface:rgba(21,17,34,.82);--surface-deep:#100d1b;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Microsoft YaHei","PingFang SC",sans-serif;font-family:var(--sans);color:var(--ink);background:#090811;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{position:relative;margin:0;min-height:100vh;overflow-x:hidden;background:radial-gradient(ellipse at 50% -15%,rgba(126,82,235,.24),transparent 43%),radial-gradient(ellipse at 100% 47%,rgba(87,57,157,.13),transparent 32%),linear-gradient(180deg,#0b0913 0%,#090811 55%,#0d0a16 100%);color:var(--ink)}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(205,188,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(205,188,255,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+a{color:inherit}
+.masthead,.page{position:relative;z-index:1}
+.masthead{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,6vw,92px);border-bottom:1px solid rgba(191,169,255,.11);background:rgba(9,8,17,.58);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.045em;font-size:15px}
+.brand-mark{width:35px;height:35px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#bca0ff,#7851da);color:#fff;font-family:var(--sans);font-size:18px;font-weight:700;box-shadow:0 5px 22px rgba(144,101,255,.28),inset 0 1px 0 rgba(255,255,255,.32)}
+.brand small{display:block;color:#8b829f;font-size:9px;letter-spacing:.19em;font-weight:650;margin-top:3px}
+.mast-meta{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:11px}
+.mast-meta a{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:9px 13px;background:rgba(255,255,255,.035);transition:all .2s ease}
+.mast-meta a:hover{border-color:var(--line-strong);background:rgba(177,143,255,.1);color:#e9deff}
+.page{max-width:1270px;margin:auto;padding:58px clamp(20px,6vw,92px) 62px}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:34px;align-items:end;padding:4px 0 36px;border-bottom:1px solid var(--line)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;color:#c4adf4;font-weight:650;border:1px solid rgba(181,147,255,.19);background:rgba(159,119,255,.07);border-radius:999px;padding:8px 12px}
+.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:#b99aff;box-shadow:0 0 10px rgba(185,154,255,.85)}
+.hero h1{font-family:var(--sans);font-size:clamp(39px,6vw,72px);font-weight:650;letter-spacing:-.075em;line-height:1.04;margin:21px 0 15px;max-width:790px;text-wrap:balance}
+.hero h1 em{font-weight:650;color:#c6adff;font-style:normal;text-shadow:0 0 34px rgba(158,117,255,.22)}
+.hero p{max-width:670px;font-size:14px;color:var(--muted);line-height:1.8;margin:0}
+.date-card{justify-self:end;text-align:right;padding:16px 18px 14px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(35,27,54,.74),rgba(17,14,28,.68));box-shadow:0 16px 45px rgba(5,3,15,.2),inset 0 1px 0 rgba(255,255,255,.045)}
+.date-day{font-family:var(--sans);font-size:44px;font-weight:600;line-height:1;color:#e1d3ff;letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+.date-month{font-size:9px;letter-spacing:.14em;color:#9b91ad;margin-top:9px}
+.date-card small{display:block;font-size:10px;color:#80778e;margin-top:12px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:31px 0 16px}
+.section-head h2{font-family:var(--sans);font-weight:600;letter-spacing:-.045em;font-size:23px;margin:0}
+.section-head p{font-size:9px;letter-spacing:.12em;color:#80778e;margin:0}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.project-card{position:relative;isolation:isolate;overflow:hidden;min-height:365px;padding:24px 25px 21px;background:linear-gradient(145deg,rgba(24,20,39,.94),rgba(15,13,25,.94));border:1px solid rgba(190,169,255,.14);border-radius:22px;display:flex;flex-direction:column;box-shadow:0 18px 48px rgba(4,3,13,.23),inset 0 1px 0 rgba(255,255,255,.035);transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(190,169,255,.32);box-shadow:0 24px 58px rgba(6,3,20,.4),0 0 34px rgba(129,83,227,.09),inset 0 1px 0 rgba(255,255,255,.055)}
+.project-card:before{content:"";position:absolute;z-index:-1;width:230px;height:230px;border-radius:50%;right:-102px;top:-145px;background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%);pointer-events:none}
+.project-card:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.025),transparent 28%);z-index:-1}
+.card-2:before,.card-3:before,.card-4:before,.card-5:before{background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:1}
+.category{font-size:10px;font-weight:700;color:#d0bdff;letter-spacing:.035em}
+.category-en{font-size:8px;letter-spacing:.15em;color:#766d87}
+.card-2 .category,.card-3 .category,.card-4 .category,.card-5 .category{color:#d0bdff}
+.project-card h2{position:relative;z-index:1;font-family:var(--sans);font-size:25px;line-height:1.24;font-weight:600;letter-spacing:-.045em;margin:24px 0 6px;max-width:92%;text-wrap:pretty}
+.repo{position:relative;z-index:1;width:fit-content;font-size:11px;color:#bda4fa;text-decoration:none;overflow-wrap:anywhere;transition:color .18s ease}
+.repo:hover{color:#e5d8ff;text-decoration:underline;text-underline-offset:3px}
+.summary{font-size:13px;line-height:1.75;color:#b4adc3;margin:18px 0 14px;max-width:96%}
+.detail{border-top:1px solid rgba(191,169,255,.11);padding:11px 0 0;margin-top:9px}
+.detail span{font-size:9px;letter-spacing:.07em;color:#a897c9;font-weight:700}
+.detail p{font-size:12px;line-height:1.7;color:#cbc4d7;margin:5px 0 0}
+.growth{padding-bottom:13px}
+.reason{padding-bottom:13px}
+.signal{margin-top:auto;display:flex;gap:8px;align-items:center;color:#928aa2;font-size:10px;line-height:1.5;padding:10px 0 12px}
+.signal-dot{flex:0 0 auto;width:6px;height:6px;background:#b99aff;border-radius:50%;box-shadow:0 0 0 4px rgba(185,154,255,.11),0 0 12px rgba(185,154,255,.45)}
+.actions{display:flex;gap:8px;position:relative;z-index:1}
+.action{display:inline-flex;gap:14px;align-items:center;border:1px solid transparent;border-radius:999px;padding:10px 15px;font-size:11px;font-weight:650;text-decoration:none;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.action:hover{transform:translateY(-1px)}
+.action:active{transform:scale(.98)}
+.action-github{background:linear-gradient(135deg,#b99aff,#8058df);color:#fff;box-shadow:0 5px 18px rgba(129,84,224,.24)}
+.action-github:hover{background:linear-gradient(135deg,#cbb6ff,#956ff0);box-shadow:0 8px 25px rgba(129,84,224,.34)}
+.action-demo{background:rgba(255,255,255,.045);color:#e0d5f6;border-color:var(--line)}
+.action-demo:hover{background:rgba(177,143,255,.12);border-color:var(--line-strong)}
+.action:focus-visible,.mast-meta a:focus-visible,.repo:focus-visible{outline:2px solid #d4c1ff;outline-offset:3px}
+.card-index{position:absolute;right:23px;bottom:20px;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;color:#665a7a}
+.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:16px;margin-top:26px;color:#7f778e;font-size:10px;line-height:1.65}
+.footer a{color:#bda4fa;text-decoration:none}
+@media(max-width:720px){.masthead{height:64px;padding:0 17px}.mast-meta{gap:7px;font-size:10px}.mast-meta span{display:none}.mast-meta a{padding:8px 11px}.page{padding:36px 17px 42px}.hero{grid-template-columns:1fr;gap:15px;padding-bottom:25px}.hero h1{font-size:clamp(42px,12vw,54px);margin-top:17px}.hero p{font-size:13px}.date-card{justify-self:start;text-align:left;padding:10px 13px;display:flex;align-items:center;gap:11px;border-radius:14px}.date-day{font-size:28px}.date-month{margin:0 0 2px}.date-card small{margin:0 0 0 2px}.section-head{align-items:start;flex-direction:column;gap:7px;margin-top:25px}.section-head h2{font-size:21px}.cards{grid-template-columns:1fr;gap:12px}.project-card{min-height:340px;padding:20px;border-radius:19px}.project-card h2{font-size:23px;margin-top:21px}.summary{font-size:12px}.detail p{font-size:11px}.footer{flex-direction:column;gap:5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+  <header class="masthead"><div class="brand"><span class="brand-mark">G</span><div>GitHub Daily<small>OPEN SOURCE FIELDNOTES</small></div></div><div class="mast-meta"><span>登录后在对话中输入“今天的”</span><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer">GitHub Trending ↗</a></div></header>
+  <main class="page">
+    <section class="hero"><div><div class="eyebrow">普通人成长 · AI 办公 · 生活实验</div><h1>五个方向，<em>每天一点新发现。</em></h1><p>每天从 GitHub 挑选五个普通人能看懂、能体验的项目，覆盖数据分析、办公自动化、知识管理、创作和生活。看完就知道它能帮你做什么、如何开始。</p></div><div class="date-card"><div class="date-day">31</div><div class="date-month">2026 · 10 / TODAY'S EDITION</div><small>上海时间 2026-10-31</small></div></section>
+    <section class="section-head"><h2>今日五向精选</h2><p>5 PICKS　/　FOR EVERYDAY GROWTH</p></section>
+    <section class="cards"><article class="project-card card-1">
+      <div class="card-top"><span class="category">01 / AI + 数据分析</span><span class="category-en">AI + DATA</span></div>
+      <h2>DataMagic：把一张表格做成会讲故事的动态图表</h2>
+      <a class="repo" href="https://github.com/HKUSTDial/DataMagic" target="_blank" rel="noopener noreferrer">HKUSTDial/DataMagic <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>香港科大写的数据视频工具：上传 CSV，选一个动效配方，AI 就把它做成带动画、带旁白的图表视频。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>周会汇报、季度复盘、公众号配图：手里有销售表或问卷数据，需要一条别人愿意看完的图形讲解。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>打开 datamagic.chat 直接在线体验，传表格、选动效、导出视频；也可在 139 张配方卡里挑效果，把源码交给自己的 AI 助手改。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练习把数据翻译成画面：选对图表类型、抓住关键数值、安排讲解顺序。</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>动态图表比静态截图更有说服力，配方库拿来就能改。限制：在线系统有体验额度，超出要付费；本地跑需要 git 和会写提示词。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/HKUSTDial/DataMagic" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://datamagic.chat/" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <span class="card-index">01</span>
+    </article>
+<article class="project-card card-2">
+      <div class="card-top"><span class="category">02 / AI办公自动化</span><span class="category-en">AI + WORKFLOW</span></div>
+      <h2>MDFlux：把一整个文件夹的 PDF、Word 变成干净 Markdown</h2>
+      <a class="repo" href="https://github.com/ibrahimqureshae/mdflux" target="_blank" rel="noopener noreferrer">ibrahimqureshae/mdflux <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>本地桌面小工具，拖进文件夹，批量把扫描件、Word、PPT、Excel 转成带标题和表格的 Markdown。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>想把资料喂给 AI，可复制出来的文字全是乱的：合同、课件、发票、扫描件的文字抓不准，格式也丢了。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>到 Releases 下载 windows_x64_full 压缩包（约 257MB），解压双击 MDFlux.exe，首次联网装一次环境，之后完全离线。不用账号和 API Key。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>学会判断什么格式适合喂 AI，理解 OCR、结构化文本和 token 成本之间的关系。</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>省掉手工复制粘贴，转出来的 Markdown 结构清楚，AI 读得准也更省钱。限制：目前只有 Windows 版，macOS 还在路线图上。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/ibrahimqureshae/mdflux" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">02</span>
+    </article>
+<article class="project-card card-3">
+      <div class="card-top"><span class="category">03 / AI知识管理</span><span class="category-en">AI + KNOWLEDGE</span></div>
+      <h2>EdgeEver：像印象笔记的三栏笔记库，AI 能直接读写</h2>
+      <a class="repo" href="https://github.com/tianma-if/edgeever" target="_blank" rel="noopener noreferrer">tianma-if/edgeever <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>开源的 AI 原生笔记库，经典三栏布局，笔记同时存成 Markdown，AI 助手可以通过 MCP 直接读写你的知识库。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>笔记散在微信收藏、备忘录和网盘里，想找一句话翻半天；还想让 AI 只根据你自己的资料回答问题。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>先打开 demo.edgeever.org 看效果（每天重置，别存隐私）；要长期用就下桌面端，再按 README 部署自己的后端（Cloudflare 免费额度或一条 Docker 命令）。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练习知识库的结构设计：目录怎么分、笔记怎么写才方便被检索和引用。</p></div>
+      <div class="detail"><span>学习价值</span><p>7/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>数据是自己的 Markdown，不锁定平台，三千星且今天还在提交。限制：得先部署后端，纯小白第一次会卡在 Cloudflare 那几步。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/tianma-if/edgeever" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://demo.edgeever.org/" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <span class="card-index">03</span>
+    </article>
+<article class="project-card card-4">
+      <div class="card-top"><span class="category">04 / AI创作与内容</span><span class="category-en">AI + CREATION</span></div>
+      <h2>OpenChatCut：能用说话改的本地视频剪辑器</h2>
+      <a class="repo" href="https://github.com/0xsline/OpenChatCut" target="_blank" rel="noopener noreferrer">0xsline/OpenChatCut <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>对话式 AI 剪辑器，跟它说“去掉停顿、加字幕”，它直接改真实时间线上的片段，改完还能手动继续修。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>做口播、课程、视频号内容，一小时的素材，手动对轴、去停顿、打字幕最耗时间。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>到 Releases 下载对应系统的安装包（Windows exe、macOS dmg），装完就能用；本地剪辑不联网，要用 AI 对话就在设置里填一个模型 API Key。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练剪辑基本功：多轨时间线、字幕、转场；顺带学会怎么把剪辑意图说清楚给 AI 听。</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>产出是可编辑的轨道而不是黑盒视频，这点比一键生成实用。限制：还在早期，功能常变；macOS 包未签名；安装包 700MB 起。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/0xsline/OpenChatCut" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">04</span>
+    </article>
+<article class="project-card card-5">
+      <div class="card-top"><span class="category">05 / AI生活实验室</span><span class="category-en">AI + LIFE</span></div>
+      <h2>yovoice：在自己电脑上做配音、克隆声音、写歌</h2>
+      <a class="repo" href="https://github.com/leemysw/yovoice" target="_blank" rel="noopener noreferrer">leemysw/yovoice <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>本地 AI 音频工作室：文字转语音、克隆自己的声音、生成带歌词的整首歌，全程离线、按字符不计费。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>想给视频配个像样的旁白，或者给家人做一首生日歌，又不想按字数付费、不想把声音和文稿传到别人服务器。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>从 Releases 下载 Windows 的 setup.exe 或 macOS 的 dmg，装好打开，在应用里下载模型（第一次要等一会儿），就能开始生成。无需注册和 API Key。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>摸清 TTS、声音克隆和 AI 音乐的真实水平，学会调语气、断句和节奏。</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>一次装好之后不再付费，素材不出本机，两三星且昨天还在更新。限制：模型要下载几个 GB，核显或老机器会很慢；克隆别人声音要授权。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/leemysw/yovoice" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">05</span>
+    </article></section>
+    <footer class="footer"><span>项目来源：GitHub 仓库与 README。简介和上手方式按项目公开资料整理。</span><span>更新于上海时间 2026-10-31</span></footer>
+  </main>
+</body>
+</html>
