@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090811">
+  <meta name="description" content="GitHub Daily：每天精选五个帮助普通人成长、提效和改善生活的开源项目。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%237851da'/%3E%3Ctext x='16' y='23' font-size='21' text-anchor='middle' fill='%23fff' font-family='Arial'%3EG%3C/text%3E%3C/svg%3E">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+  <title>GitHub Daily · 2026.11.09</title>
+  <style>
+:root{color-scheme:dark;--ink:#f4f0ff;--muted:#a8a1ba;--muted-2:#817994;--line:rgba(191,169,255,.15);--line-strong:rgba(191,169,255,.28);--purple:#c6adff;--purple-bright:#a984ff;--surface:rgba(21,17,34,.82);--surface-deep:#100d1b;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Microsoft YaHei","PingFang SC",sans-serif;font-family:var(--sans);color:var(--ink);background:#090811;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{position:relative;margin:0;min-height:100vh;overflow-x:hidden;background:radial-gradient(ellipse at 50% -15%,rgba(126,82,235,.24),transparent 43%),radial-gradient(ellipse at 100% 47%,rgba(87,57,157,.13),transparent 32%),linear-gradient(180deg,#0b0913 0%,#090811 55%,#0d0a16 100%);color:var(--ink)}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(205,188,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(205,188,255,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+a{color:inherit}
+.masthead,.page{position:relative;z-index:1}
+.masthead{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,6vw,92px);border-bottom:1px solid rgba(191,169,255,.11);background:rgba(9,8,17,.58);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.045em;font-size:15px}
+.brand-mark{width:35px;height:35px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#bca0ff,#7851da);color:#fff;font-family:var(--sans);font-size:18px;font-weight:700;box-shadow:0 5px 22px rgba(144,101,255,.28),inset 0 1px 0 rgba(255,255,255,.32)}
+.brand small{display:block;color:#8b829f;font-size:9px;letter-spacing:.19em;font-weight:650;margin-top:3px}
+.mast-meta{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:11px}
+.mast-meta a{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:9px 13px;background:rgba(255,255,255,.035);transition:all .2s ease}
+.mast-meta a:hover{border-color:var(--line-strong);background:rgba(177,143,255,.1);color:#e9deff}
+.page{max-width:1270px;margin:auto;padding:58px clamp(20px,6vw,92px) 62px}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:34px;align-items:end;padding:4px 0 36px;border-bottom:1px solid var(--line)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;color:#c4adf4;font-weight:650;border:1px solid rgba(181,147,255,.19);background:rgba(159,119,255,.07);border-radius:999px;padding:8px 12px}
+.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:#b99aff;box-shadow:0 0 10px rgba(185,154,255,.85)}
+.hero h1{font-family:var(--sans);font-size:clamp(39px,6vw,72px);font-weight:650;letter-spacing:-.075em;line-height:1.04;margin:21px 0 15px;max-width:790px;text-wrap:balance}
+.hero h1 em{font-weight:650;color:#c6adff;font-style:normal;text-shadow:0 0 34px rgba(158,117,255,.22)}
+.hero p{max-width:670px;font-size:14px;color:var(--muted);line-height:1.8;margin:0}
+.date-card{justify-self:end;text-align:right;padding:16px 18px 14px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(35,27,54,.74),rgba(17,14,28,.68));box-shadow:0 16px 45px rgba(5,3,15,.2),inset 0 1px 0 rgba(255,255,255,.045)}
+.date-day{font-family:var(--sans);font-size:44px;font-weight:600;line-height:1;color:#e1d3ff;letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+.date-month{font-size:9px;letter-spacing:.14em;color:#9b91ad;margin-top:9px}
+.date-card small{display:block;font-size:10px;color:#80778e;margin-top:12px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:31px 0 16px}
+.section-head h2{font-family:var(--sans);font-weight:600;letter-spacing:-.045em;font-size:23px;margin:0}
+.section-head p{font-size:9px;letter-spacing:.12em;color:#80778e;margin:0}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.project-card{position:relative;isolation:isolate;overflow:hidden;min-height:365px;padding:24px 25px 21px;background:linear-gradient(145deg,rgba(24,20,39,.94),rgba(15,13,25,.94));border:1px solid rgba(190,169,255,.14);border-radius:22px;display:flex;flex-direction:column;box-shadow:0 18px 48px rgba(4,3,13,.23),inset 0 1px 0 rgba(255,255,255,.035);transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(190,169,255,.32);box-shadow:0 24px 58px rgba(6,3,20,.4),0 0 34px rgba(129,83,227,.09),inset 0 1px 0 rgba(255,255,255,.055)}
+.project-card:before{content:"";position:absolute;z-index:-1;width:230px;height:230px;border-radius:50%;right:-102px;top:-145px;background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%);pointer-events:none}
+.project-card:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.025),transparent 28%);z-index:-1}
+.card-2:before,.card-3:before,.card-4:before,.card-5:before{background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:1}
+.category{font-size:10px;font-weight:700;color:#d0bdff;letter-spacing:.035em}
+.category-en{font-size:8px;letter-spacing:.15em;color:#766d87}
+.card-2 .category,.card-3 .category,.card-4 .category,.card-5 .category{color:#d0bdff}
+.project-card h2{position:relative;z-index:1;font-family:var(--sans);font-size:25px;line-height:1.24;font-weight:600;letter-spacing:-.045em;margin:24px 0 6px;max-width:92%;text-wrap:pretty}
+.repo{position:relative;z-index:1;width:fit-content;font-size:11px;color:#bda4fa;text-decoration:none;overflow-wrap:anywhere;transition:color .18s ease}
+.repo:hover{color:#e5d8ff;text-decoration:underline;text-underline-offset:3px}
+.summary{font-size:13px;line-height:1.75;color:#b4adc3;margin:18px 0 14px;max-width:96%}
+.detail{border-top:1px solid rgba(191,169,255,.11);padding:11px 0 0;margin-top:9px}
+.detail span{font-size:9px;letter-spacing:.07em;color:#a897c9;font-weight:700}
+.detail p{font-size:12px;line-height:1.7;color:#cbc4d7;margin:5px 0 0}
+.growth{padding-bottom:13px}
+.reason{padding-bottom:13px}
+.signal{margin-top:auto;display:flex;gap:8px;align-items:center;color:#928aa2;font-size:10px;line-height:1.5;padding:10px 0 12px}
+.signal-dot{flex:0 0 auto;width:6px;height:6px;background:#b99aff;border-radius:50%;box-shadow:0 0 0 4px rgba(185,154,255,.11),0 0 12px rgba(185,154,255,.45)}
+.actions{display:flex;gap:8px;position:relative;z-index:1}
+.action{display:inline-flex;gap:14px;align-items:center;border:1px solid transparent;border-radius:999px;padding:10px 15px;font-size:11px;font-weight:650;text-decoration:none;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.action:hover{transform:translateY(-1px)}
+.action:active{transform:scale(.98)}
+.action-github{background:linear-gradient(135deg,#b99aff,#8058df);color:#fff;box-shadow:0 5px 18px rgba(129,84,224,.24)}
+.action-github:hover{background:linear-gradient(135deg,#cbb6ff,#956ff0);box-shadow:0 8px 25px rgba(129,84,224,.34)}
+.action-demo{background:rgba(255,255,255,.045);color:#e0d5f6;border-color:var(--line)}
+.action-demo:hover{background:rgba(177,143,255,.12);border-color:var(--line-strong)}
+.action:focus-visible,.mast-meta a:focus-visible,.repo:focus-visible{outline:2px solid #d4c1ff;outline-offset:3px}
+.card-index{position:absolute;right:23px;bottom:20px;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;color:#665a7a}
+.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:16px;margin-top:26px;color:#7f778e;font-size:10px;line-height:1.65}
+.footer a{color:#bda4fa;text-decoration:none}
+@media(max-width:720px){.masthead{height:64px;padding:0 17px}.mast-meta{gap:7px;font-size:10px}.mast-meta span{display:none}.mast-meta a{padding:8px 11px}.page{padding:36px 17px 42px}.hero{grid-template-columns:1fr;gap:15px;padding-bottom:25px}.hero h1{font-size:clamp(42px,12vw,54px);margin-top:17px}.hero p{font-size:13px}.date-card{justify-self:start;text-align:left;padding:10px 13px;display:flex;align-items:center;gap:11px;border-radius:14px}.date-day{font-size:28px}.date-month{margin:0 0 2px}.date-card small{margin:0 0 0 2px}.section-head{align-items:start;flex-direction:column;gap:7px;margin-top:25px}.section-head h2{font-size:21px}.cards{grid-template-columns:1fr;gap:12px}.project-card{min-height:340px;padding:20px;border-radius:19px}.project-card h2{font-size:23px;margin-top:21px}.summary{font-size:12px}.detail p{font-size:11px}.footer{flex-direction:column;gap:5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+  <header class="masthead"><div class="brand"><span class="brand-mark">G</span><div>GitHub Daily<small>OPEN SOURCE FIELDNOTES</small></div></div><div class="mast-meta"><span>登录后在对话中输入“今天的”</span><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer">GitHub Trending ↗</a></div></header>
+  <main class="page">
+    <section class="hero"><div><div class="eyebrow">普通人成长 · AI 办公 · 生活实验</div><h1>五个方向，<em>每天一点新发现。</em></h1><p>每天从 GitHub 挑选五个普通人能看懂、能体验的项目，覆盖数据分析、办公自动化、知识管理、创作和生活。看完就知道它能帮你做什么、如何开始。</p></div><div class="date-card"><div class="date-day">09</div><div class="date-month">2026 · 11 / TODAY'S EDITION</div><small>上海时间 2026-11-09</small></div></section>
+    <section class="section-head"><h2>今日五向精选</h2><p>5 PICKS　/　FOR EVERYDAY GROWTH</p></section>
+    <section class="cards"><article class="project-card card-1">
+      <div class="card-top"><span class="category">01 / AI + 数据分析</span><span class="category-en">AI + DATA</span></div>
+      <h2>RTutor：上传 Excel 就能问着分析</h2>
+      <a class="repo" href="https://github.com/gexijin/RTutor" target="_blank" rel="noopener noreferrer">gexijin/RTutor <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>上传 CSV 或 Excel，用一句话提问，它现场写 R 代码跑出图表，还能导出整份 HTML 分析报告。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>手里有一张几千行的销售表或问卷表，不会写公式和透视表，只想问「哪个月卖得最好」并马上看到图。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>打开 rtutor.ai，先点 EDA 看概况，选好刚上传的表，在提问框里写需求；不用注册，报告能直接下载。中文提问可用，但界面是英文。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练把业务问题拆成能算的口径，学会检查它生成的 R 代码有没有跑偏</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>零安装，浏览器里跑完「提问—出图—出报告」。限制：结果可能算错要自己核对；免费仅限非商用；只吃规整的二维表。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/gexijin/RTutor" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://rtutor.ai" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <span class="card-index">01</span>
+    </article>
+<article class="project-card card-2">
+      <div class="card-top"><span class="category">02 / AI办公自动化</span><span class="category-en">AI + WORKFLOW</span></div>
+      <h2>Meetily：开会自动记纪要的本地工具</h2>
+      <a class="repo" href="https://github.com/Zackriya-Solutions/meetily" target="_blank" rel="noopener noreferrer">Zackriya-Solutions/meetily <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>Windows、macOS 装好就能录会议，本地 Whisper 转文字，再接模型生成摘要，录音和文字都不出本机。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>每周组会、客户电话一堆，边听边记跟不上，会后还要花半小时回忆到底谁说了什么。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>到 meetily.ai 或 Releases 下安装包（Windows 用 x64-setup.exe，Mac 用 dmg），装好点录音选麦克风或系统声音，摘要接本机 Ollama 或填模型 Key。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练会前准备、会后把纪要拆成待办，以及给不同会议定摘要模板</p></div>
+      <div class="detail"><span>学习价值</span><p>9/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>三万多人用过的会议纪要工具，Windows 也能跑，本地转写不花订阅费。限制：说话人区分、PDF/Word 导出属付费 PRO；CPU 要支持 AVX2。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/Zackriya-Solutions/meetily" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://meetily.ai" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <span class="card-index">02</span>
+    </article>
+<article class="project-card card-3">
+      <div class="card-top"><span class="category">03 / AI知识管理</span><span class="category-en">AI + KNOWLEDGE</span></div>
+      <h2>ReadAny：能对着书提问的本地阅读器</h2>
+      <a class="repo" href="https://github.com/codedogQBY/ReadAny" target="_blank" rel="noopener noreferrer">codedogQBY/ReadAny <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>把电子书拖进书架，边读边划重点，AI 只基于这本书回答，还能按意思搜，不靠关键词。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>囤了一堆 PDF 和 EPUB，读完只记得大概，想回头找「那本讲复利的书里怎么说的」却翻不到。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>从 Releases 下 Windows 的 exe 或 msi（Mac 用 dmg），导入书后双击打开，设置里填 API Key 或接 Ollama，就能划词提问、语义搜索、导出笔记。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练划线标注、把问答结果沉淀成读书笔记，再串成自己的主题</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>书和笔记都留本机，向量检索也跑在本地，比上传云端踏实。限制：不填模型 Key 只有阅读和普通搜索；扫描版 PDF 得先自己 OCR。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/codedogQBY/ReadAny" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://codedogqby.github.io/ReadAny/" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <span class="card-index">03</span>
+    </article>
+<article class="project-card card-4">
+      <div class="card-top"><span class="category">04 / AI创作与内容</span><span class="category-en">AI + CREATION</span></div>
+      <h2>Oh My PPT：本地 AI 做 PPT，能导回 PPTX</h2>
+      <a class="repo" href="https://github.com/arcsin1/oh-my-ppt" target="_blank" rel="noopener noreferrer">arcsin1/oh-my-ppt <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>说清主题就自动出大纲、排版和配图，做完能演示、能改，也能导出成 PowerPoint 里可继续编辑的文件。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>周五要交汇报，模板挑半天、排版老对不齐；或者客户给了旧 PPTX 模板，想在上面快速换内容。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>到 ohmyppt.cc 或 Releases 下 Windows 的 exe（Mac 用 dmg），装好后在设置里填一个模型 Key（也可接本地 Ollama），回首页填主题就能生成。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练把汇报讲清楚：先定结构和重点，再让 AI 排版，最后自己改措辞</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>桌面端本地跑，自带九十多套风格，最实用的是能把 HTML 稿导成可编辑 PPTX。限制：未签名安装包会被系统拦一下；生图改稿要耗模型额度。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/arcsin1/oh-my-ppt" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://www.ohmyppt.cc" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <span class="card-index">04</span>
+    </article>
+<article class="project-card card-5">
+      <div class="card-top"><span class="category">05 / AI生活实验室</span><span class="category-en">AI + LIFE</span></div>
+      <h2>MoChord：吉他手的 AI 练习室</h2>
+      <a class="repo" href="https://github.com/Mocha-Yuan/MoChord" target="_blank" rel="noopener noreferrer">Mocha-Yuan/MoChord <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>输入一个调式或级数走向，AI 给两套和弦进行，配指板图、试听、调音器和节拍练习。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>想写首歌或练段进行，一会儿查和弦网站、一会儿开调音器、一会儿找节拍器，来回切窗口。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>从 Releases 下 MoChord_x64-setup.exe 装到 Windows（也有安卓包），不填 Key 也能用本地兜底算法，填 DeepSeek Key 后生成的进行更有色彩。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练级数与功能和声、把位怎么选，以及按 BPM 分轮提速的练习方法</p></div>
+      <div class="detail"><span>学习价值</span><p>7/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>把和弦、把位、调音、节拍塞进一个窗口，两百来星的小项目但真能用。限制：偏吉他，键盘用户用不上；调音要开麦克风；云同步得自己配。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/Mocha-Yuan/MoChord" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">05</span>
+    </article></section>
+    <footer class="footer"><span>项目来源：GitHub 仓库与 README。简介和上手方式按项目公开资料整理。</span><span>更新于上海时间 2026-11-09</span></footer>
+  </main>
+</body>
+</html>
