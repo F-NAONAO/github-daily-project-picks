@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090811">
+  <meta name="description" content="GitHub Daily：每天精选五个帮助普通人成长、提效和改善生活的开源项目。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%237851da'/%3E%3Ctext x='16' y='23' font-size='21' text-anchor='middle' fill='%23fff' font-family='Arial'%3EG%3C/text%3E%3C/svg%3E">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+  <title>GitHub Daily · 2026.11.22</title>
+  <style>
+:root{color-scheme:dark;--ink:#f4f0ff;--muted:#a8a1ba;--muted-2:#817994;--line:rgba(191,169,255,.15);--line-strong:rgba(191,169,255,.28);--purple:#c6adff;--purple-bright:#a984ff;--surface:rgba(21,17,34,.82);--surface-deep:#100d1b;--sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Microsoft YaHei","PingFang SC",sans-serif;font-family:var(--sans);color:var(--ink);background:#090811;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{position:relative;margin:0;min-height:100vh;overflow-x:hidden;background:radial-gradient(ellipse at 50% -15%,rgba(126,82,235,.24),transparent 43%),radial-gradient(ellipse at 100% 47%,rgba(87,57,157,.13),transparent 32%),linear-gradient(180deg,#0b0913 0%,#090811 55%,#0d0a16 100%);color:var(--ink)}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(205,188,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(205,188,255,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+a{color:inherit}
+.masthead,.page{position:relative;z-index:1}
+.masthead{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,6vw,92px);border-bottom:1px solid rgba(191,169,255,.11);background:rgba(9,8,17,.58);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:-.045em;font-size:15px}
+.brand-mark{width:35px;height:35px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#bca0ff,#7851da);color:#fff;font-family:var(--sans);font-size:18px;font-weight:700;box-shadow:0 5px 22px rgba(144,101,255,.28),inset 0 1px 0 rgba(255,255,255,.32)}
+.brand small{display:block;color:#8b829f;font-size:9px;letter-spacing:.19em;font-weight:650;margin-top:3px}
+.mast-meta{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:11px}
+.mast-meta a{text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:9px 13px;background:rgba(255,255,255,.035);transition:all .2s ease}
+.mast-meta a:hover{border-color:var(--line-strong);background:rgba(177,143,255,.1);color:#e9deff}
+.page{max-width:1270px;margin:auto;padding:58px clamp(20px,6vw,92px) 62px}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:34px;align-items:end;padding:4px 0 36px;border-bottom:1px solid var(--line)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;color:#c4adf4;font-weight:650;border:1px solid rgba(181,147,255,.19);background:rgba(159,119,255,.07);border-radius:999px;padding:8px 12px}
+.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:#b99aff;box-shadow:0 0 10px rgba(185,154,255,.85)}
+.hero h1{font-family:var(--sans);font-size:clamp(39px,6vw,72px);font-weight:650;letter-spacing:-.075em;line-height:1.04;margin:21px 0 15px;max-width:790px;text-wrap:balance}
+.hero h1 em{font-weight:650;color:#c6adff;font-style:normal;text-shadow:0 0 34px rgba(158,117,255,.22)}
+.hero p{max-width:670px;font-size:14px;color:var(--muted);line-height:1.8;margin:0}
+.date-card{justify-self:end;text-align:right;padding:16px 18px 14px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(35,27,54,.74),rgba(17,14,28,.68));box-shadow:0 16px 45px rgba(5,3,15,.2),inset 0 1px 0 rgba(255,255,255,.045)}
+.date-day{font-family:var(--sans);font-size:44px;font-weight:600;line-height:1;color:#e1d3ff;letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+.date-month{font-size:9px;letter-spacing:.14em;color:#9b91ad;margin-top:9px}
+.date-card small{display:block;font-size:10px;color:#80778e;margin-top:12px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:31px 0 16px}
+.section-head h2{font-family:var(--sans);font-weight:600;letter-spacing:-.045em;font-size:23px;margin:0}
+.section-head p{font-size:9px;letter-spacing:.12em;color:#80778e;margin:0}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.project-card{position:relative;isolation:isolate;overflow:hidden;min-height:365px;padding:24px 25px 21px;background:linear-gradient(145deg,rgba(24,20,39,.94),rgba(15,13,25,.94));border:1px solid rgba(190,169,255,.14);border-radius:22px;display:flex;flex-direction:column;box-shadow:0 18px 48px rgba(4,3,13,.23),inset 0 1px 0 rgba(255,255,255,.035);transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(190,169,255,.32);box-shadow:0 24px 58px rgba(6,3,20,.4),0 0 34px rgba(129,83,227,.09),inset 0 1px 0 rgba(255,255,255,.055)}
+.project-card:before{content:"";position:absolute;z-index:-1;width:230px;height:230px;border-radius:50%;right:-102px;top:-145px;background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%);pointer-events:none}
+.project-card:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.025),transparent 28%);z-index:-1}
+.card-2:before,.card-3:before,.card-4:before,.card-5:before{background:radial-gradient(circle,rgba(151,107,255,.2),rgba(151,107,255,.045) 48%,transparent 72%)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:1}
+.category{font-size:10px;font-weight:700;color:#d0bdff;letter-spacing:.035em}
+.category-en{font-size:8px;letter-spacing:.15em;color:#766d87}
+.card-2 .category,.card-3 .category,.card-4 .category,.card-5 .category{color:#d0bdff}
+.project-card h2{position:relative;z-index:1;font-family:var(--sans);font-size:25px;line-height:1.24;font-weight:600;letter-spacing:-.045em;margin:24px 0 6px;max-width:92%;text-wrap:pretty}
+.repo{position:relative;z-index:1;width:fit-content;font-size:11px;color:#bda4fa;text-decoration:none;overflow-wrap:anywhere;transition:color .18s ease}
+.repo:hover{color:#e5d8ff;text-decoration:underline;text-underline-offset:3px}
+.summary{font-size:13px;line-height:1.75;color:#b4adc3;margin:18px 0 14px;max-width:96%}
+.detail{border-top:1px solid rgba(191,169,255,.11);padding:11px 0 0;margin-top:9px}
+.detail span{font-size:9px;letter-spacing:.07em;color:#a897c9;font-weight:700}
+.detail p{font-size:12px;line-height:1.7;color:#cbc4d7;margin:5px 0 0}
+.growth{padding-bottom:13px}
+.reason{padding-bottom:13px}
+.signal{margin-top:auto;display:flex;gap:8px;align-items:center;color:#928aa2;font-size:10px;line-height:1.5;padding:10px 0 12px}
+.signal-dot{flex:0 0 auto;width:6px;height:6px;background:#b99aff;border-radius:50%;box-shadow:0 0 0 4px rgba(185,154,255,.11),0 0 12px rgba(185,154,255,.45)}
+.actions{display:flex;gap:8px;position:relative;z-index:1}
+.action{display:inline-flex;gap:14px;align-items:center;border:1px solid transparent;border-radius:999px;padding:10px 15px;font-size:11px;font-weight:650;text-decoration:none;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.action:hover{transform:translateY(-1px)}
+.action:active{transform:scale(.98)}
+.action-github{background:linear-gradient(135deg,#b99aff,#8058df);color:#fff;box-shadow:0 5px 18px rgba(129,84,224,.24)}
+.action-github:hover{background:linear-gradient(135deg,#cbb6ff,#956ff0);box-shadow:0 8px 25px rgba(129,84,224,.34)}
+.action-demo{background:rgba(255,255,255,.045);color:#e0d5f6;border-color:var(--line)}
+.action-demo:hover{background:rgba(177,143,255,.12);border-color:var(--line-strong)}
+.action:focus-visible,.mast-meta a:focus-visible,.repo:focus-visible{outline:2px solid #d4c1ff;outline-offset:3px}
+.card-index{position:absolute;right:23px;bottom:20px;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;color:#665a7a}
+.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:16px;margin-top:26px;color:#7f778e;font-size:10px;line-height:1.65}
+.footer a{color:#bda4fa;text-decoration:none}
+@media(max-width:720px){.masthead{height:64px;padding:0 17px}.mast-meta{gap:7px;font-size:10px}.mast-meta span{display:none}.mast-meta a{padding:8px 11px}.page{padding:36px 17px 42px}.hero{grid-template-columns:1fr;gap:15px;padding-bottom:25px}.hero h1{font-size:clamp(42px,12vw,54px);margin-top:17px}.hero p{font-size:13px}.date-card{justify-self:start;text-align:left;padding:10px 13px;display:flex;align-items:center;gap:11px;border-radius:14px}.date-day{font-size:28px}.date-month{margin:0 0 2px}.date-card small{margin:0 0 0 2px}.section-head{align-items:start;flex-direction:column;gap:7px;margin-top:25px}.section-head h2{font-size:21px}.cards{grid-template-columns:1fr;gap:12px}.project-card{min-height:340px;padding:20px;border-radius:19px}.project-card h2{font-size:23px;margin-top:21px}.summary{font-size:12px}.detail p{font-size:11px}.footer{flex-direction:column;gap:5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+  <header class="masthead"><div class="brand"><span class="brand-mark">G</span><div>GitHub Daily<small>OPEN SOURCE FIELDNOTES</small></div></div><div class="mast-meta"><span>登录后在对话中输入“今天的”</span><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer">GitHub Trending ↗</a></div></header>
+  <main class="page">
+    <section class="hero"><div><div class="eyebrow">普通人成长 · AI 办公 · 生活实验</div><h1>五个方向，<em>每天一点新发现。</em></h1><p>每天从 GitHub 挑选五个普通人能看懂、能体验的项目，覆盖数据分析、办公自动化、知识管理、创作和生活。看完就知道它能帮你做什么、如何开始。</p></div><div class="date-card"><div class="date-day">22</div><div class="date-month">2026 · 11 / TODAY'S EDITION</div><small>上海时间 2026-11-22</small></div></section>
+    <section class="section-head"><h2>今日五向精选</h2><p>5 PICKS　/　FOR EVERYDAY GROWTH</p></section>
+    <section class="cards"><article class="project-card card-1">
+      <div class="card-top"><span class="category">01 / AI + 数据分析</span><span class="category-en">AI + DATA</span></div>
+      <h2>SuperSonic：像聊天一样问数据的国产 BI 平台</h2>
+      <a class="repo" href="https://github.com/tencentmusic/supersonic" target="_blank" rel="noopener noreferrer">tencentmusic/supersonic <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>腾讯音乐开源的 AI+BI 平台，把数据表配置好后，用自然语言提问就能得到查询结果和图表，不需要写 SQL。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>团队想看&#39;这个月各区域销量对比&#39;这类问题，传统 BI 要拖控件写查询，用它直接问就行，适合向业务同事开放自助分析。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>需要 Docker 一键部署后用浏览器访问（约 30 分钟）；先把示例数据集接入，再试官方文档里的提问示例，跑通后再连自己的库。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>练习把业务问题表述成清晰的数据问题，理解&#39;语义层&#39;为什么能让 AI 问数更准。</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>国产 Chat BI 里社区最活跃的项目之一，问答体验成熟；需要 Docker 部署，对纯小白有一道安装门槛，建议先跟官方文档走。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/tencentmusic/supersonic" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">01</span>
+    </article>
+<article class="project-card card-2">
+      <div class="card-top"><span class="category">02 / AI办公自动化</span><span class="category-en">AI + WORKFLOW</span></div>
+      <h2>OpenManus：开源全能 AI 智能体，一句话派活儿</h2>
+      <a class="repo" href="https://github.com/FoundationAgents/OpenManus" target="_blank" rel="noopener noreferrer">FoundationAgents/OpenManus <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>近六万星的全能智能体框架，给它一个任务，它会自己规划步骤、操作浏览器、处理文件、写代码，全程可见执行过程。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>批量收集竞品资料并汇总成文档、自动填一堆重复的网页表单、让 AI 自己跑完一轮数据收集——这类多步骤杂活可以交给它。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>需要先装 Python，再用 uv 一条命令安装，配置大模型 API Key 后在终端运行；按官方 README 的示例任务跑通第一次约需半小时。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>理解智能体&#39;规划-执行-观察&#39;的工作循环，学会把模糊需求拆成它可执行的明确指令。</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>OpenManus 系是最火的开源智能体之一，社区活跃、任务能力强；命令行启动对纯小白有门槛，复杂任务也费 API 额度。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/FoundationAgents/OpenManus" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://openmanus.github.io/" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <span class="card-index">02</span>
+    </article>
+<article class="project-card card-3">
+      <div class="card-top"><span class="category">03 / AI知识管理</span><span class="category-en">AI + KNOWLEDGE</span></div>
+      <h2>AFFiNE：白板+文档+表格一体的开源知识库</h2>
+      <a class="repo" href="https://github.com/toeverything/AFFiNE" target="_blank" rel="noopener noreferrer">toeverything/AFFiNE <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>开源知识管理平台，文档、画布白板、多维表格无缝混排，内置 AI 助手帮你写作、整理和总结。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>做项目资料库、读书笔记或个人 Wiki，需要文档和白板混着用、还想让 AI 帮忙整理要点时，它比 Notion 更自由。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>官网注册可直接用云端版（免费额度够体验），或下载桌面版本地部署；新建一页文档，试试 AI 续写和&#39;选中内容让 AI 总结&#39;。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>掌握&#39;文档+白板&#39;混排的知识组织方式，练习用 AI 辅助提炼和归档自己的资料。</p></div>
+      <div class="detail"><span>学习价值</span><p>9/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>七万多星、今天还在更新的明星项目，本地化部署可保证数据私有；AI 高级功能部分收费，本地完整部署需要 Docker。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/toeverything/AFFiNE" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://affine.pro" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <span class="card-index">03</span>
+    </article>
+<article class="project-card card-4">
+      <div class="card-top"><span class="category">04 / AI创作与内容</span><span class="category-en">AI + CREATION</span></div>
+      <h2>MoneyPrinterTurbo：一个主题生成一条高清短视频</h2>
+      <a class="repo" href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener noreferrer">harry0703/MoneyPrinterTurbo <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>输入主题或关键词，AI 自动写文案、配素材、生成字幕配音，一键产出高清短视频，14 万多人星标。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>想做口播类、科普类短视频但不会剪片子：给它一个选题，几分钟出一版成片草稿，再简单调整就能发。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>提供 Windows 一键安装包和 Docker 两种方式；装好后填一个大模型 API Key，输入主题选好比例（竖屏/横屏）点生成即可。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>理解 AI 视频生产的流水线：文案、素材、配音、字幕各环节怎么自动衔接，练习改 prompt 控制成片风格。</p></div>
+      <div class="detail"><span>学习价值</span><p>9/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>14.5 万星的现象级项目、今天仍在更新，中文支持好；素材来自免费素材库可能撞图，出片质量取决于所选模型和素材匹配度。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a></div>
+      <span class="card-index">04</span>
+    </article>
+<article class="project-card card-5">
+      <div class="card-top"><span class="category">05 / AI生活实验室</span><span class="category-en">AI + LIFE</span></div>
+      <h2>anx-reader：带 AI 助手的开源电子书阅读器</h2>
+      <a class="repo" href="https://github.com/Anxcye/anx-reader" target="_blank" rel="noopener noreferrer">Anxcye/anx-reader <span>↗</span></a>
+      <div class="detail"><span>一句话介绍</span><p>开源电子书阅读器，支持 EPUB、PDF、mobi 等主流格式，内置 AI 能划词翻译、解释和总结正在读的内容。</p></div>
+      <div class="detail"><span>普通人使用场景</span><p>囤了一堆电子书没时间啃：用它读书时选中难懂的段落让 AI 立刻解释，读外文书划词翻译，读完还能让 AI 总结要点。</p></div>
+      <div class="detail"><span>小白体验步骤</span><p>官网下载 Windows、macOS 或 Android 版安装即可，导入一本 EPUB 试试划词 AI 解释；数据支持 WebDAV 同步。</p></div>
+      <div class="detail growth"><span>可以提升</span><p>养成&#39;边读边问&#39;的 AI 阅读习惯，用 AI 摘要降低长书的入门门槛。</p></div>
+      <div class="detail"><span>学习价值</span><p>8/10</p></div>
+      <div class="detail reason"><span>推荐理由</span><p>九千多星、中文界面、界面清爽上手快，AI 能力直接内置无需折腾；iOS 版暂缺，AI 功能需配置自己的模型接口。</p></div>
+      <div class="actions"><a class="action action-github" href="https://github.com/Anxcye/anx-reader" target="_blank" rel="noopener noreferrer">看 GitHub <span>↗</span></a><a class="action action-demo" href="https://anx.anxcye.com" target="_blank" rel="noopener noreferrer">试玩 / 体验 <span>↗</span></a></div>
+      <span class="card-index">05</span>
+    </article></section>
+    <footer class="footer"><span>项目来源：GitHub 仓库与 README。简介和上手方式按项目公开资料整理。</span><span>更新于上海时间 2026-11-22</span></footer>
+  </main>
+</body>
+</html>
